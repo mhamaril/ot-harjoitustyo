@@ -9,4 +9,5 @@ Tähän tulee leipätekstiä, *josta kursilla sivulause*.
 
 ## Linkit
 [gitlog.txt](https://github.com/mhamaril/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+
 [komentorivi.txt](https://github.com/mhamaril/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)

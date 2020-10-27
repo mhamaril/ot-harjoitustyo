@@ -1,6 +1,6 @@
 # Tämä on otsikko
 
-Tähän tulee leipätekstiä, *josta kursilla sivulause*.
+Tähän tulee leipätekstiä, *josta kursilla sivulause*.**Laitetaan vielä lihavoinnilla tämä lause.**
 
 ### Tehtävä lista
 - [x]  Luo git repo

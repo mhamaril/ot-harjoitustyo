@@ -1,0 +1,121 @@
+commit 655ac56d032d9b42a9bdbf926819160c02049380
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 13:32:24 2020 +0200
+
+    file yks poistettu
+
+ tiedostoja/file1 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e14c5be4abfbe6e15bb6d78075dbe489cc2dff16
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 13:30:48 2020 +0200
+
+    file1 poistettu ja file2 nimetty uudelleen file22
+
+ tiedostoja/file22 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit bee81275c6e21e7d07a0830cf9f1441f069cd40b
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 13:25:29 2020 +0200
+
+    fileet luotu
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2ae3a200690168e8e7807df4d68608654171f99d
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 11:18:47 2020 +0200
+
+    eka ja kolmas sisältöä muutettu
+
+ eka.txt    | 16 +---------------
+ kolmas.txt |  7 ++++++-
+ 2 files changed, 7 insertions(+), 16 deletions(-)
+
+commit c61ff59e48e7b6781ed384ffd82209e168122d50
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 11:15:26 2020 +0200
+
+    tiedosto.txt nimi muutettu eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a8ac4b89eba9b4f34b5735ef171a54badf47c229
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 11:13:44 2020 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit a3adcdf5944b0701de5a3a2e8fcaf67c1183f888
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 11:09:48 2020 +0200
+
+    tiedosto.txt muokattu
+
+ tiedosto.txt | 106 +++++++++++++++++++++++++++++++++++++++++++++++++----------
+ 1 file changed, 89 insertions(+), 17 deletions(-)
+
+commit 5eaaefcf31e04cfdba7b180d6b5636c36e3d10d8
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 11:07:38 2020 +0200
+
+    paljon tekstiä liitetty
+
+ tiedosto.txt | 649 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 649 insertions(+)
+
+commit 9a07adcd0700600c241de4038b1e1232d62faec4
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 11:02:10 2020 +0200
+
+    hakemisto stuff lisätty sisältöineen
+
+ stuff/jotain.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit fdd70cf6e8cb70e340f2b7a574208978a02cc67b
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 11:00:40 2020 +0200
+
+    toinen.txt ja kolmas.txt sisältöä muutettu
+
+ kolmas.txt | 2 +-
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit 7ed5e887dabfac5cc5d5e674136f98cb3b756a97
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 10:58:50 2020 +0200
+
+    kolmas tiedosto lisätty
+
+ kolmas.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f7aab4db962fd0d25c588033dbc8cf01252bf403
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 10:55:27 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 76fc5218ad0be7fd8c3c428991cd46749537f0ea
+Author: mhamaril <matti.hamarila@yahoo.com>
+Date:   Tue Oct 27 10:52:53 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)

@@ -8,5 +8,5 @@ Tähän tulee leipätekstiä, *josta kursilla sivulause*.
 - [ ]  Koodaa sovellus 
 
 ## Linkit
-https://github.com/mhamaril/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt
-https://github.com/mhamaril/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt
+[gitlog.txt](https://github.com/mhamaril/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/mhamaril/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)

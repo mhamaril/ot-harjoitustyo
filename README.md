@@ -8,6 +8,6 @@ Lisätään vielä yksi lause.
 - [ ]  Koodaa sovellus 
 
 ## Linkit
-[gitlog.txt](https://github.com/mhamaril/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[Vaativuusmäärittely](https://github.com/mhamaril/ot-harjoitustyo/dokumentaatio/Vaativuusmaarittely.md)
 
-[komentorivi.txt](https://github.com/mhamaril/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+[Tuntikirjanpito](https://github.com/mhamaril/ot-harjoitustyo/dokumentaatio/tuntikirjanpito.md)

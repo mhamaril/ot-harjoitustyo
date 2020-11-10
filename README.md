@@ -8,6 +8,6 @@ Lisätään vielä yksi lause.
 - [ ]  Koodaa sovellus 
 
 ## Linkit
-[Vaativuusmäärittely](https://github.com/mhamaril/ot-harjoitustyo/dokumentaatio/Vaativuusmaarittely.md)
+[Vaativuusmäärittely](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/Vaativuusmaarittely.md)
 
-[Tuntikirjanpito](https://github.com/mhamaril/ot-harjoitustyo/dokumentaatio/tuntikirjanpito.md)
+[Tuntikirjanpito](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)

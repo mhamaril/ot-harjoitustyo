@@ -20,7 +20,7 @@ Sovellus aukeaa perusnäkymään, jossa on mahdollista tehdä erilaisia laskutoi
 
 - Käyttäjä voi luoda yhden tai kaksi n x n kokoista matriisia, missä n < 6
 	- Matriisin kokoa voi muuttaa "+" ja "-" napeista
-- Käyttäjä voi tehdä kerto, yhteen- ja vähennyslaskuja matriiseilla
+- Käyttäjä voi tehdä kerto-, yhteen- ja vähennyslaskuja matriiseilla
 - Saatu tulos näkyy result laatikossa
 
 ## Jatkokehitysideoita

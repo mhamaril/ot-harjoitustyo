@@ -12,7 +12,7 @@ Sovelluksella ei ole erillisiä käyttäjärooleja, ainoastaan yksi käyttäjär
 
 Sovellus koostuu yhdestä näkymästä
 
-![](./kuvat/kayttoliittyma-hahmotelma.png)
+![](./kayttoliittymaluonnos.jpg)
 
 Sovellus aukeaa perusnäkymään, jossa on mahdollista tehdä erilaisia laskutoimituksia matriiseilla.
 

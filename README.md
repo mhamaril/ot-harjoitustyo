@@ -1,10 +1,10 @@
-# Tämä on otsikko
+# Ohejlmistotekniikan harjoitustyö
 
-Tähän tulee leipätekstiä, *josta kursilla sivulause*.**Laitetaan vielä lihavoinnilla tämä lause.**
+Tähän tulee myöhemmin tarkempi selostus millainen harjoitustyöstä tulee. Alla kuitenkin *linkit vaativuusmäärittelyyn sekä tuntikirjanpitoon*.
 Lisätään vielä yksi lause.
 ### Tehtävä lista
 - [x]  Luo git repo
-- [ ]  Keksi aihe
+- [x]  Keksi aihe
 - [ ]  Koodaa sovellus 
 
 ## Linkit

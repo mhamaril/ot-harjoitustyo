@@ -1,7 +1,7 @@
 # Ohejlmistotekniikan harjoitustyö
 
 Tähän tulee myöhemmin tarkempi selostus millainen harjoitustyöstä tulee. Alla kuitenkin *linkit vaativuusmäärittelyyn sekä tuntikirjanpitoon*.
-Lisätään vielä yksi lause.
+
 ### Tehtävä lista
 - [x]  Luo git repo
 - [x]  Keksi aihe

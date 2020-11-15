@@ -1,7 +1,6 @@
-# Ohejlmistotekniikan harjoitustyö
 # Matriisilaskin
 
-Sovelluksen avulla voi tehdä matriisien välisiä laskutoimituksia. Tällä hetkellä sillä ei voi laskea kuin 3x3 matriiseilla, mutta pyrin jatkokehittämään sovellusta niin että sillä pystyy laskemaan n x m kokoisia matriiseja kun m,n < 9. 
+Sovelluksen avulla voi tehdä matriisien välisiä laskutoimituksia. Tällä hetkellä sillä ei voi laskea kuin 3x3 matriiseilla, mutta pyrin jatkokehittämään sovellusta niin että sillä pystyy laskemaan n x m kokoisia matriiseja kun n,m < 9. 
 
 ## Huomio Python-versiosta
 

@@ -14,7 +14,7 @@ Sovelluksen toiminta on testattu Python-versiolla `3.9.0`. Etenkin vanhempien Py
 
 ## Asennus
 
-1. Asenna riippuvuut komennolla:
+1. Asenna riippuvuudet komennolla:
 
 ```bash
 python3 -m pipenv install

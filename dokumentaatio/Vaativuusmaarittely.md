@@ -21,6 +21,7 @@ Sovellus aukeaa perusnäkymään, jossa on mahdollista tehdä erilaisia laskutoi
 - Käyttäjä voi luoda yhden tai kaksi 3 x 3 kokoista matriisia
 - Käyttäjä voi tehdä kerto-, yhteen- ja vähennyslaskuja matriiseilla
 - Käyttäjä voi ottaa A matriisista determinantin, käänteismatriisin tai transpoosin
+- Käyttäjä voi tyhjätä matriisit "Clear"- napeilla
 - Saatu tulos näkyy sovelluksessa
 
 ## Jatkokehitysideoita

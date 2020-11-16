@@ -18,17 +18,19 @@ Sovellus aukeaa perusnäkymään, jossa on mahdollista tehdä erilaisia laskutoi
 
 ## Perusversion tarjoama toiminnallisuus
 
-- Käyttäjä voi luoda yhden tai kaksi n x n kokoista matriisia, missä n < 6
-	- Matriisin kokoa voi muuttaa "+" ja "-" napeista
+- Käyttäjä voi luoda yhden tai kaksi 3 x 3 kokoista matriisia
 - Käyttäjä voi tehdä kerto-, yhteen- ja vähennyslaskuja matriiseilla
-- Saatu tulos näkyy result laatikossa
+- Käyttäjä voi ottaa A matriisista determinantin, käänteismatriisin tai transpoosin
+- Saatu tulos näkyy sovelluksessa
 
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla:
-
-- Lisätään muita matriisien laskutoimituksia, kuten esimerkiksi determinantin tai käänteismatriisin laskeminen
+- Lisätään sama ominaisuus myös B matriisille: Käyttäjä voi ottaa B matriisista determinantin, käänteismatriisin tai transpoosin
+- Korjataan "Vastaus"- ikkuna
+- Lisätään mahdollisuus muuttaa matriisin kokoa "+" ja "-" napeista
+- Lisätään muita matriisien laskutoimituksia
 - Lisätään mahdollisuus tehdä erikokoisia matriiseja esim. 3x4 matriiseja
-	- Tästä seuraa että sovelluksen on tarkistettava voiko laskutoimituksia suorittaa
+- Lisätään mahdollisuus laskea yhtälöryhmillä eri laskutoimituksia, tämä lisäisi yhden näkymän lisää
 - Pyritään kasvattamaan suurimman sallitun matriisin kokoa
 - Lisätään mahdollisuus laskea saadulla tuloksella uusia laskutoimituksia

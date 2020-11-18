@@ -8,9 +8,13 @@ start = "python3 src/index.py"
 test = "pytest"
 coverage = "coverage run --branch -m pytest"
 coverage-report = "coverage html"
+lint = "pylint src"
+
 [dev-packages]
 
 [packages]
 pytest = "*"
 numpy = "*"
 coverage = "*"
+pylint = "*"
+autopep8 = "*"

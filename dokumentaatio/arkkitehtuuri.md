@@ -13,13 +13,13 @@ Pakkaus _gui_ sisältää käyttöliittymästä ja _services_ sovelluslogiikasta
 Käyttöliittymä sisältää tällä hetkellä yhden näkymän:
 
 - Päänäkymä, missä voi tehdä matriiseilla laskutoimituksia
-- Aloitusnäkymä, missä valitaan matriisien koot
+- Aloitusnäkymä, jota ei vielä ole, missä valitaan matriisien koot
 
 Jokainen näistä toteutetaan omana luokkanaan. Näkymistä yksi on aina kerrallaan näkyvänä. Näkymien näyttämisestä vastaa [GUI](../src/gui/gui.py)-luokka. Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta. Se ainoastaan kutsuu [MatrixService](../src/services/matrix_service.py)-luokan metodeja.
 
 ## Sovelluslogiikka
 
-Toiminnallisista kokonaisuuksista vastaa luokkan [MatrixService](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/src/services/todo_service.py) ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä ovat esimerkiksi:
+Toiminnallisista kokonaisuuksista vastaa luokka [MatrixService](../src/services/matrix_service.py) joka on ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä ovat esimerkiksi:
 
 - `transpose_matrix_a()`
 - `determinant_matrix_a()`
@@ -30,8 +30,6 @@ Toiminnallisista kokonaisuuksista vastaa luokkan [MatrixService](https://github.
 
 ![Pakkausrakenne ja luokat](./kuvat/arkkitehtuuri-pakkaus-luokat.png)
 
-Luokat noudattavat [Repository](https://en.wikipedia.org/wiki/Data_access_object) -suunnittelumallia ja ne on tarvittaessa mahdollista korvata uusilla toteutuksilla, jos sovelluksen datan talletustapaa päätetään vaihtaa. Sovelluslogiikan testauksessa hyödynnetäänkin tätä siten, että testeissä käytetään tiedostoon ja tietokantaan tallentavien olioiden sijaan keskusmuistiin tallentavia toteutuksia.
-
 ## Päätoiminnallisuudet
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.
@@ -40,8 +38,7 @@ Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuude
 
 ![](./kuvat/sekvenssi-kirjautuminen.png)
 
-Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/src/ui/login_view.py#L18) kutsuu sovelluslogiikan `TodoService` metodia [login](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/src/services/todo_service.py#L87) antaen parametriksi käyttäjätunnuksen ja salasanan. Sovelluslogiikka selvittää `UserRepository`:n avulla onko käyttäjätunnus olemassa. Jos on, tarkastetaan täsmääkö salasanat. Jos salasanat täsmäävät, kirjautuminen onnistuu. Tämän seurauksena käyttöliittymä vaihtaa näkymäksi `TodosView`:n, eli sovelluksen varsinaisen päänäkymän ja renderöi näkymään kirjautuneen käyttäjän todot eli tekemättömät tehtävät.
-
+Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](../src/gui/main_view.py#L90) kutsuu aluksi käyttöliittymästä metodia [transpose_a], joka kutsuu samassa luokassa olevaa metodia [get_values_from_matrix a]. Tämän jälkeen lähetetään sovelluslogiikalle metodin [return_values_to_service_b(matrix)] avulla äsken haetun matriisin arvo ja kutsutaan metodia [transpose_matrix_a]. Sovelluslogiikassa tehdään laskutoimitus ja palautetaan tulos (https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L18). Tämän jälkeen main_view.py näyttää tuloksen.
 ### Muut toiminnallisuudet
 
 ## Ohjelman rakenteeseen jääneet heikkoudet

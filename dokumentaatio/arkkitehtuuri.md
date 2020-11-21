@@ -26,10 +26,6 @@ Toiminnallisista kokonaisuuksista vastaa luokka [MatrixService](../src/services/
 - `inverse_matrix_b()`
 - `power_of_matrix_a()`
 
-`MatrixService`-luokan ja ohjelman muiden osien suhdetta kuvaava luokka/pakkauskaavio:
-
-![Pakkausrakenne ja luokat](./kuvat/arkkitehtuuri-pakkaus-luokat.png)
-
 ## Päätoiminnallisuudet
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.

@@ -6,11 +6,11 @@
 | 10.11.| 2    | vaatimuusmäärittelyn luominen   |
 | 13.11.| 5    | graafisen käyttöliittymän tekoa |
 | 14.11.| 3    | refraktorointia                 |
+| 20.11.| 3    | lisää refraktorointi            |
+| 21.11.| 3    | testien korjaukset luokille     |
 |       |      |                                 |
 |       |      |                                 |
 |       |      |                                 |
 |       |      |                                 |
 |       |      |                                 |
-|       |      |                                 |
-|       |      |                                 |
-| yht   | 11   | | 
+| yht   | 17   | | 

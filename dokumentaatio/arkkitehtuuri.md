@@ -32,7 +32,7 @@ Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuude
 
 ### Syötteiden kirjaaminen sekä laskutoimitus
 
-![](./kuvat/sekvenssi-kirjautuminen.png)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio.jpg)
 
 Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](../src/gui/main_view.py#L90) kutsuu aluksi käyttöliittymästä metodia [transpose_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L165), joka kutsuu samassa luokassa olevaa metodia [get_values_from_matrix a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L288). Tämän jälkeen lähetetään sovelluslogiikalle metodin [return_values_to_service_a(matrix)](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L10) avulla äsken haetun matriisin arvo ja kutsutaan metodia [transpose_matrix_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L18). Sovelluslogiikassa tehdään laskutoimitus ja palautetaan tulos [transpose_matrix_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L19). Tämän jälkeen main_view.py metodi [show_results(matrix)](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L311) näyttää tuloksen.
 

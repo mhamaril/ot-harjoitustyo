@@ -4,7 +4,7 @@
 
 Ohjelman rakenne noudattelee kaksitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
 
-![Pakkausrakenne](./kuvat/arkkitehtuuri-pakkaus.png)
+![Pakkausrakenne](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/pakkausrakenne.jpg)
 
 Pakkaus _gui_ sisältää käyttöliittymästä ja _services_ sovelluslogiikasta vastaavan koodin.
 

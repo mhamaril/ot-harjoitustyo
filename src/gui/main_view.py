@@ -1,11 +1,18 @@
 from tkinter import *
 import numpy as np
 
+#from services import matrix_service
+from services.matrix_service import MatrixService
+
 
 class MainView:
     def __init__(self, root, title):
         self.root = root
         self.title = title
+        self.matrix_service = MatrixService(self.root)
+        self.matrix_a = [[]]
+        self.matrix_b = [[]]
+        self.result = [[]]
         self.initialize_view()
 
     def initialize_view(self):
@@ -56,77 +63,6 @@ class MainView:
         self.root.grid_columnconfigure(4, minsize=100)
         self.root.grid_columnconfigure(6, minsize=100)
 
-        button_inverse_a = Button(
-            self.root, text="Inv(A)", width=7, command=self.inverse_matrix_a)
-        button_inverse_a.grid(row=6, column=1)
-        button_transpose_a = Button(
-            self.root, text="Trans(A)", width=7, command=self.transpose_matrix_a)
-        button_transpose_a.grid(row=6, column=0)
-        button_determinant_a = Button(
-            self.root, text="Det(A)", width=7, command=self.determinant_matrix_a)
-        button_determinant_a.grid(row=6, column=2)
-
-        button_multiply_by_a = Button(
-            self.root, text="Multiply by", width=17, command=self.multiply_by_matrix_a)
-        button_multiply_by_a.grid(row=7, column=0, columnspan=2)
-        self.m_b_a = Entry(self.root, width=9, borderwidth=5)
-        self.m_b_a.grid(row=7, column=2)
-
-        button_multiply_by_b = Button(
-            self.root, text="Multiply by", width=17, command=self.multiply_by_matrix_b)
-        button_multiply_by_b.grid(row=7, column=7, columnspan=2)
-        self.m_b_b = Entry(self.root, width=9, borderwidth=5)
-        self.m_b_b.grid(row=7, column=9)
-
-        button_power_of_a = Button(
-            self.root, text="Raise to power of", width=17, command=self.power_of_matrix_a)
-        button_power_of_a.grid(row=8, column=0, columnspan=2)
-        self.p_o_a = Entry(self.root, width=9, borderwidth=5)
-        self.p_o_a.grid(row=8, column=2)
-
-        button_power_of_b = Button(
-            self.root, text="Raise to power of", width=17, command=self.power_of_matrix_b)
-        button_power_of_b.grid(row=8, column=7, columnspan=2)
-        self.p_o_b = Entry(self.root, width=9, borderwidth=5)
-        self.p_o_b.grid(row=8, column=9)
-
-        button_inverse_b = Button(
-            self.root, text="Inv(B)", width=7, command=self.inverse_matrix_b)
-        button_inverse_b.grid(row=6, column=8)
-        button_transpose_b = Button(
-            self.root, text="Trans(B)", width=7, command=self.transpose_matrix_b)
-        button_transpose_b.grid(row=6, column=7)
-        button_determinant_b = Button(
-            self.root, text="Det(B)", width=7, command=self.determinant_matrix_b)
-        button_determinant_b.grid(row=6, column=9)
-
-        button_axb = Button(self.root, text="A x B", width=7,
-                            command=self.matrix_multiply)
-        button_axb.grid(row=3, column=5)
-        button_a_add_b = Button(self.root, text="A + B",
-                                width=7, command=self.matrix_add)
-        button_a_add_b.grid(row=4, column=5)
-        button_a_subs_b = Button(
-            self.root, text="A - B", width=7, command=self.matrix_subtract)
-        button_a_subs_b.grid(row=5, column=5)
-        button_flip_matrices = Button(
-            self.root, text="Flip", width=7, command=self.flip_matrices)
-        button_flip_matrices.grid(row=1, column=5)
-        button_clear_a = Button(
-            self.root, text="Clear", width=7, command=self.clear_a)
-        button_clear_a.grid(row=4, column=0)
-        button_size_up_matrix_a = Button(self.root, text="+", width=7)
-        button_size_up_matrix_a.grid(row=4, column=1)
-        button_size_down_matrix_a = Button(self.root, text="-", width=7)
-        button_size_down_matrix_a.grid(row=4, column=2)
-        button_clear_b = Button(
-            self.root, text="Clear", width=7, command=self.clear_b)
-        button_clear_b.grid(row=4, column=7)
-        button_size_up_matrix_b = Button(self.root, text="+", width=7)
-        button_size_up_matrix_b.grid(row=4, column=8)
-        button_size_down_matrix_b = Button(self.root, text="-", width=7)
-        button_size_down_matrix_b.grid(row=4, column=9)
-
         result_entry = Label(self.root, text="Result")
         result_entry.grid(row=11, column=5)
         self.r11 = Entry(self.root, width=9, borderwidth=5)
@@ -148,6 +84,77 @@ class MainView:
         self.r33 = Entry(self.root, width=9, borderwidth=5)
         self.r33.grid(row=14, column=6)
 
+        button_inverse_a = Button(
+            self.root, text="Inv(A)", width=7, command=self.inverse_a)
+        button_inverse_a.grid(row=6, column=1)
+        button_transpose_a = Button(
+            self.root, text="Trans(A)", width=7, command=self.transpose_a)
+        button_transpose_a.grid(row=6, column=0)
+        button_determinant_a = Button(
+            self.root, text="Det(A)", width=7, command=self.determinant_a)
+        button_determinant_a.grid(row=6, column=2)
+
+        button_multiply_by_a = Button(
+            self.root, text="Multiply by", width=17, command=self.multiply_by_a)
+        button_multiply_by_a.grid(row=7, column=0, columnspan=2)
+        self.m_b_a = Entry(self.root, width=9, borderwidth=5)
+        self.m_b_a.grid(row=7, column=2)
+
+        button_multiply_by_b = Button(
+            self.root, text="Multiply by", width=17, command=self.multiply_by_b)
+        button_multiply_by_b.grid(row=7, column=7, columnspan=2)
+        self.m_b_b = Entry(self.root, width=9, borderwidth=5)
+        self.m_b_b.grid(row=7, column=9)
+
+        button_power_of_a = Button(
+            self.root, text="Raise to power of", width=17, command=self.power_of_a)
+        button_power_of_a.grid(row=8, column=0, columnspan=2)
+        self.p_o_a = Entry(self.root, width=9, borderwidth=5)
+        self.p_o_a.grid(row=8, column=2)
+
+        button_power_of_b = Button(
+            self.root, text="Raise to power of", width=17, command=self.power_of_b)
+        button_power_of_b.grid(row=8, column=7, columnspan=2)
+        self.p_o_b = Entry(self.root, width=9, borderwidth=5)
+        self.p_o_b.grid(row=8, column=9)
+
+        button_inverse_b = Button(
+            self.root, text="Inv(B)", width=7, command=self.inverse_b)
+        button_inverse_b.grid(row=6, column=8)
+        button_transpose_b = Button(
+            self.root, text="Trans(B)", width=7, command=self.transpose_b)
+        button_transpose_b.grid(row=6, column=7)
+        button_determinant_b = Button(
+            self.root, text="Det(B)", width=7, command=self.determinant_b)
+        button_determinant_b.grid(row=6, column=9)
+
+        button_axb = Button(self.root, text="A x B", width=7,
+                            command=self.axb)
+        button_axb.grid(row=3, column=5)
+        button_a_add_b = Button(self.root, text="A + B",
+                                width=7, command=self.a_add_b)
+        button_a_add_b.grid(row=4, column=5)
+        button_a_subs_b = Button(
+            self.root, text="A - B", width=7, command=self.a_subs_b)
+        button_a_subs_b.grid(row=5, column=5)
+        button_flip_matrices = Button(
+            self.root, text="Flip", width=7, command=self.flip_matrices)
+        button_flip_matrices.grid(row=1, column=5)
+        button_clear_a = Button(
+            self.root, text="Clear", width=7, command=self.clear_a)
+        button_clear_a.grid(row=4, column=0)
+        button_size_up_matrix_a = Button(self.root, text="+", width=7)
+        button_size_up_matrix_a.grid(row=4, column=1)
+        button_size_down_matrix_a = Button(self.root, text="-", width=7)
+        button_size_down_matrix_a.grid(row=4, column=2)
+        button_clear_b = Button(
+            self.root, text="Clear", width=7, command=self.clear_b)
+        button_clear_b.grid(row=4, column=7)
+        button_size_up_matrix_b = Button(self.root, text="+", width=7)
+        button_size_up_matrix_b.grid(row=4, column=8)
+        button_size_down_matrix_b = Button(self.root, text="-", width=7)
+        button_size_down_matrix_b.grid(row=4, column=9)
+
         button_insert_in_a = Button(
             self.root, text="Insert in A", width=17, command=self.insert_in_result_a)
         button_insert_in_a.grid(row=12, column=7, columnspan=2)
@@ -155,164 +162,78 @@ class MainView:
             self.root, text="Insert in B", width=17, command=self.insert_in_result_b)
         button_insert_in_b.grid(row=13, column=7, columnspan=2)
 
+    def transpose_a(self):
+        matrix = self.get_values_from_matrix_a()
+        self.matrix_service.return_values_to_service_a(matrix)
+        self.result = self.matrix_service.transpose_matrix_a()
+        self.show_results(self.result)
+    
+    def transpose_b(self):
+        matrix = self.get_values_from_matrix_b()
+        self.matrix_service.return_values_to_service_b(matrix)
+        self.show_results(self.matrix_service.transpose_matrix_b())
+    
+    def determinant_a(self):
+        matrix = self.get_values_from_matrix_a()
+        self.matrix_service.return_values_to_service_a(matrix)
+        self.show_det_or_inv(self.matrix_service.determinant_matrix_a())
+    
+    def determinant_b(self):
+        matrix = self.get_values_from_matrix_b()
+        self.matrix_service.return_values_to_service_b(matrix)
+        self.show_det_or_inv(self.matrix_service.determinant_matrix_b())
 
-    def inverse_matrix_a(self):
-        matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
-            self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
-                self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
-                    self.a33.get())]])
-        try:
-            mat_inv_a = np.linalg.inv(matrix_a)
-            is_matrix = True
-        except:
-            mat_inv_a = []
-            is_matrix = False
+    def inverse_a(self):
+        matrix = self.get_values_from_matrix_a()
+        self.matrix_service.return_values_to_service_a(matrix)
+        self.show_det_or_inv(self.matrix_service.inverse_matrix_a())
+    
+    def inverse_b(self):
+        matrix = self.get_values_from_matrix_b()
+        self.matrix_service.return_values_to_service_b(matrix)
+        self.show_det_or_inv(self.matrix_service.inverse_matrix_b())
+    
+    def multiply_by_a(self):
+        matrix = self.get_values_from_matrix_a()
+        self.matrix_service.return_values_to_service_a(matrix)
+        self.show_results(self.matrix_service.multiply_matrix_a_by(float(self.m_b_a.get())))
 
-        self.result_function(mat_inv_a, is_matrix)
+    def power_of_a(self):
+        matrix = self.get_values_from_matrix_a()
+        self.matrix_service.return_values_to_service_a(matrix)
+        self.show_results(self.matrix_service.power_of_matrix_a(int(self.p_o_a.get())))
 
-    def reset_results(self):
-        self.r11.delete(0, END)
-        self.r12.delete(0, END)
-        self.r13.delete(0, END)
-        self.r21.delete(0, END)
-        self.r22.delete(0, END)
-        self.r22.delete(0, END)
-        self.r23.delete(0, END)
-        self.r31.delete(0, END)
-        self.r32.delete(0, END)
-        self.r33.delete(0, END)
+    def power_of_b(self):
+        matrix = self.get_values_from_matrix_b()
+        self.matrix_service.return_values_to_service_b(matrix)
+        self.show_results(self.matrix_service.power_of_matrix_b(int(self.p_o_b.get())))
 
-    def result_function(self, matrix, is_matrix):
-        self.reset_results()
-        if is_matrix:
-            self.r11.insert(0, matrix[0][0])
-            self.r12.insert(0, matrix[0][1])
-            self.r13.insert(0, matrix[0][2])
-            self.r21.insert(0, matrix[1][0])
-            self.r22.insert(0, matrix[1][1])
-            self.r23.insert(0, matrix[1][2])
-            self.r31.insert(0, matrix[2][0])
-            self.r32.insert(0, matrix[2][1])
-            self.r33.insert(0, matrix[2][2])
-        else:
-            self.r12.insert(0, "   Not")
-            self.r22.insert(0, "Invertible")
-
-    def transpose_matrix_a(self):
-        matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
-            self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
-                self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
-                    self.a33.get())]])
-        matrix_transpose_a = matrix_a.transpose()
-        self.result_function(matrix_transpose_a, True)
-
-    def determinant_matrix_a(self):
-        matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
-            self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
-                self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
-                    self.a33.get())]])
-        matrix_det_a = np.linalg.det(matrix_a)
-        self.reset_results()
-        self.r22.insert(0, matrix_det_a)
-
-    def multiply_by_matrix_a(self):
-        matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
-            self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
-                self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
-                    self.a33.get())]])
-        result_mul = matrix_a*(float(self.m_b_a.get()))
-        self.result_function(result_mul, True)
-
-    def power_of_matrix_a(self):
-        matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
-            self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
-                self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
-                    self.a33.get())]])
-        result_pow = np.linalg.matrix_power(matrix_a, int(self.p_o_a.get()))
-        self.result_function(result_pow, True)
-
-    def inverse_matrix_b(self):
-        matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
-            self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
-                self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
-                    self.b33.get())]])
-        try:
-            mat_inv_b = np.linalg.inv(matrix_b)
-            is_matrix = True
-        except ValueError:
-            mat_inv_b = []
-            is_matrix = False
-
-        self.result_function(mat_inv_b, is_matrix)
-
-    def transpose_matrix_b(self):
-        matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
-            self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
-                self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
-                    self.b33.get())]])
-        matrix_transpose_a = matrix_b.transpose()
-        self.result_function(matrix_transpose_a, True)
-
-    def determinant_matrix_b(self):
-        matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
-            self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
-                self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
-                    self.b33.get())]])
-        matrix_det_b = np.linalg.det(matrix_b)
-        self.reset_results()
-        self.r22.insert(0, matrix_det_b)
-
-    def multiply_by_matrix_b(self):
-        matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
-            self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
-                self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
-                    self.b33.get())]])
-        result_mul = matrix_b*(float(self.m_b_b.get()))
-        self.result_function(result_mul, True)
-
-    def power_of_matrix_b(self):
-        matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
-            self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
-                self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
-                    self.b33.get())]])
-        result_pow = np.linalg.matrix_power(matrix_b, int(self.p_o_b.get()))
-        self.result_function(result_pow, True)
-
-    def matrix_multiply(self):
-        matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
-            self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
-                self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
-                    self.a33.get())]])
-        matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
-            self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
-                self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
-                    self.b33.get())]])
-        multiplication = np.matmul(matrix_a, matrix_b)
-        self.result_function(multiplication, True)
-
-    def matrix_add(self):
-        matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
-            self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
-                self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
-                    self.a33.get())]])
-        matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
-            self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
-                self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(self.b33.get())]])
-        matrix_addition = matrix_a + matrix_b
-        self.result_function(matrix_addition, True)
-
-    def matrix_subtract(self):
-        matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
-            self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
-                self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
-                    self.a33.get())]])
-        matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
-            self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
-                self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
-                    self.b33.get())]])
-        matrixSubstraction = matrix_a - matrix_b
-        self.result_function(matrixSubstraction, True)
-
+    def multiply_by_b(self):
+        matrix = self.get_values_from_matrix_b()
+        self.matrix_service.return_values_to_service_a(matrix)
+        self.show_results(self.matrix_service.multiply_matrix_b_by(float(self.m_b_b.get())))
+    
+    def axb(self):
+        matrix_a = self.get_values_from_matrix_a()
+        self.matrix_service.return_values_to_service_a(matrix_a)
+        matrix_b = self.get_values_from_matrix_b()
+        self.matrix_service.return_values_to_service_b(matrix_b)
+        self.show_results(self.matrix_service.a_mul_b())
+    
+    def a_add_b(self):
+        matrix_a = self.get_values_from_matrix_a()
+        self.matrix_service.return_values_to_service_a(matrix_a)
+        matrix_b = self.get_values_from_matrix_b()
+        self.matrix_service.return_values_to_service_b(matrix_b)
+        self.show_results(self.matrix_service.a_plus_b())
+    
+    def a_subs_b(self):
+        matrix_a = self.get_values_from_matrix_a()
+        self.matrix_service.return_values_to_service_a(matrix_a)
+        matrix_b = self.get_values_from_matrix_b()
+        self.matrix_service.return_values_to_service_b(matrix_b)
+        self.show_results(self.matrix_service.a_minus_b())
+    
     def flip_matrices(self):
         temp = np.array([[float(self.b11.get()), float(self.b12.get()), float(
             self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
@@ -364,11 +285,60 @@ class MainView:
         self.b32.insert(0, float(self.r32.get()))
         self.b33.insert(0, float(self.r33.get()))
 
+    def get_values_from_matrix_a(self):
+        self.matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
+            self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
+                self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
+                    self.a33.get())]])
+        return self.matrix_a
+
+    def get_values_from_matrix_b(self):
+        self.matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
+            self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
+                self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
+                    self.b33.get())]])
+        return self.matrix_b
+
+    def show_det_or_inv(self, det):
+        self.reset_results()
+        if type(det) == str:
+            self.r12.insert(0, "     Not")
+            self.r22.insert(0, "  Invertible")
+        else:
+            self.r22.insert(0, float(det))
+
+    
+    def show_results(self, matrix):
+        self.matrix = matrix
+        self.reset_results()
+        self.r11.insert(0, float(self.matrix[0][0]))
+        self.r12.insert(0, float(self.matrix[0][1]))
+        self.r13.insert(0, float(self.matrix[0][2]))
+        self.r21.insert(0, float(self.matrix[1][0]))
+        self.r22.insert(0, float(self.matrix[1][1]))
+        self.r23.insert(0, float(self.matrix[1][2]))
+        self.r31.insert(0, float(self.matrix[2][0]))
+        self.r32.insert(0, float(self.matrix[2][1]))
+        self.r33.insert(0, float(self.matrix[2][2]))
+    
+    def reset_results(self):
+        self.r11.delete(0, END)
+        self.r12.delete(0, END)
+        self.r13.delete(0, END)
+        self.r21.delete(0, END)
+        self.r22.delete(0, END)
+        self.r22.delete(0, END)
+        self.r23.delete(0, END)
+        self.r31.delete(0, END)
+        self.r32.delete(0, END)
+        self.r33.delete(0, END)
+    
     def clear_a(self):
         self.a11.delete(0, END)
         self.a12.delete(0, END)
         self.a13.delete(0, END)
         self.a21.delete(0, END)
+        self.a22.delete(0, END)
         self.a22.delete(0, END)
         self.a23.delete(0, END)
         self.a31.delete(0, END)

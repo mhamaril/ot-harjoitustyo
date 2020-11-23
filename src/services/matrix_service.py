@@ -8,11 +8,11 @@ class MatrixService:
         self.result = []
 
     def return_values_to_service_a(self, matrix_a):
-        self.matrix_a = matrix_a
+        self.matrix_a = np.array(matrix_a)
         return self.matrix_a
 
     def return_values_to_service_b(self, matrix_b):
-        self.matrix_b = matrix_b
+        self.matrix_b = np.array(matrix_b)
         return self.matrix_b
 
     def transpose_matrix_a(self):

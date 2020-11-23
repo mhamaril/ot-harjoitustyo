@@ -1,5 +1,4 @@
 from tkinter import *
-import numpy as np
 
 from services.matrix_service import MatrixService
 
@@ -234,10 +233,10 @@ class MainView:
         self.show_results(self.matrix_service.a_minus_b())
     
     def flip_matrices(self):
-        temp = np.array([[float(self.b11.get()), float(self.b12.get()), float(
+        temp = [[float(self.b11.get()), float(self.b12.get()), float(
             self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
                 self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
-                    self.b33.get())]])
+                    self.b33.get())]]
         self.clear_b()
         self.b11.insert(0, float(self.a11.get()))
         self.b12.insert(0, float(self.a12.get()))
@@ -285,17 +284,17 @@ class MainView:
         self.b33.insert(0, float(self.r33.get()))
 
     def get_values_from_matrix_a(self):
-        self.matrix_a = np.array([[float(self.a11.get()), float(self.a12.get()), float(
+        self.matrix_a = [[float(self.a11.get()), float(self.a12.get()), float(
             self.a13.get())], [float(self.a21.get()), float(self.a22.get()), float(
                 self.a23.get())], [float(self.a31.get()), float(self.a32.get()), float(
-                    self.a33.get())]])
+                    self.a33.get())]]
         return self.matrix_a
 
     def get_values_from_matrix_b(self):
-        self.matrix_b = np.array([[float(self.b11.get()), float(self.b12.get()), float(
+        self.matrix_b = [[float(self.b11.get()), float(self.b12.get()), float(
             self.b13.get())], [float(self.b21.get()), float(self.b22.get()), float(
                 self.b23.get())], [float(self.b31.get()), float(self.b32.get()), float(
-                    self.b33.get())]])
+                    self.b33.get())]]
         return self.matrix_b
 
     def show_det_or_inv(self, det):

@@ -1,7 +1,6 @@
 from tkinter import *
 import numpy as np
 
-#from services import matrix_service
 from services.matrix_service import MatrixService
 
 
@@ -302,7 +301,7 @@ class MainView:
     def show_det_or_inv(self, det):
         self.reset_results()
         if type(det) == str:
-            self.r12.insert(0, "     Not")
+            self.r12.insert(0, "      Not")
             self.r22.insert(0, "  Invertible")
         else:
             self.r22.insert(0, float(det))

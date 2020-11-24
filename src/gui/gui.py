@@ -1,13 +1,21 @@
-#from gui.main_view import MainView
+from gui.main_view import MainView
 
 class GUI:
     def __init__(self, root):
         self.root = root
         self.current_view = None
+    def hide_current_view(self):
+        if self.current_view:
+            self.current_view.destroy()
 
-    # def show_matrix_view(self):
-    #     self.current_view = MainViev(self.root, "Matric Calculator")
+        self.current_view = None
 
-    # def start(self):
-    #     self.show_matrix_view()
+    def show_matrix_view(self):
+        self.hide_current_view()
+
+        
+        self.current_view = MainViev(self.root, "Matric Calculator")
+
+    def start(self):
+        self.show_matrix_view()
 

@@ -10,6 +10,7 @@ class MainView:
         self.matrix_service = MatrixService(self.root)
         self.matrix_a = [[]]
         self.matrix_b = [[]]
+        self.matrix = [[]]
         self.result = [[]]
         self.initialize_view()
 
@@ -208,7 +209,7 @@ class MainView:
 
     def multiply_by_b(self):
         matrix = self.get_values_from_matrix_b()
-        self.matrix_service.return_values_to_service_a(matrix)
+        self.matrix_service.return_values_to_service_b(matrix)
         self.show_results(self.matrix_service.multiply_matrix_b_by(float(self.m_b_b.get())))
     
     def axb(self):

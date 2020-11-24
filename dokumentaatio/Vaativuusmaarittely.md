@@ -27,15 +27,11 @@ Sovellus aukeaa perusnäkymään, jossa on mahdollista tehdä erilaisia laskutoi
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla:
-[x] Lisätään sama ominaisuus myös B matriisille: Käyttäjä voi ottaa B matriisista determinantin, käänteismatriisin tai transpoosin
-
-[x] Korjataan "Vastaus"- ikkuna
-
+-[x] Lisätään sama ominaisuus myös B matriisille: Käyttäjä voi ottaa B matriisista determinantin, käänteismatriisin tai transpoosin
+-[x] Korjataan "Vastaus"- ikkuna
 - Lisätään mahdollisuus muuttaa neliömatriisin kokoa "+" ja "-" napeista
-[x] Lisätään muita matriisien laskutoimituksia
-
+-[x] Lisätään muita matriisien laskutoimituksia
 - Lisätään mahdollisuus tehdä erikokoisia matriiseja esim. 3x4 matriiseja
 - Lisätään mahdollisuus laskea yhtälöryhmillä eri laskutoimituksia, tämä lisäisi yhden näkymän lisää
 - Pyritään kasvattamaan suurimman sallitun matriisin kokoa
-
-[x] Lisätään mahdollisuus laskea saadulla tuloksella uusia laskutoimituksia
+-[x] Lisätään mahdollisuus laskea saadulla tuloksella uusia laskutoimituksia

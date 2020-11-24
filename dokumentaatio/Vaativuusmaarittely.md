@@ -12,7 +12,7 @@ Sovelluksella ei ole erillisiä käyttäjärooleja, ainoastaan yksi käyttäjär
 
 Sovellus koostuu yhdestä näkymästä
 
-![](./dokumentaatio/kayttoliittymaluonnos.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/tree/master/dokumentaatio/kayttoliittymaluonnos.jpg)
 
 Sovellus aukeaa perusnäkymään, jossa on mahdollista tehdä erilaisia laskutoimituksia matriiseilla.
 

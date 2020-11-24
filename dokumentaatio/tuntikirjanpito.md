@@ -8,9 +8,9 @@
 | 14.11.| 3    | refraktorointia                 |
 | 20.11.| 3    | lisää refraktorointi            |
 | 21.11.| 3    | testien korjaukset luokille     |
+| 24.11.| 2    | lisää testien korjausta         |
 |       |      |                                 |
 |       |      |                                 |
 |       |      |                                 |
 |       |      |                                 |
-|       |      |                                 |
-| yht   | 17   | | 
+| yht   | 19   |                                 | 

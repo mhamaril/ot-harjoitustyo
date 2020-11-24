@@ -12,7 +12,7 @@ Sovelluksella ei ole erillisiä käyttäjärooleja, ainoastaan yksi käyttäjär
 
 Sovellus koostuu yhdestä näkymästä
 
-![](./dokumentaatio/kayttoliittymaluonnos.jpg)
+![Käyttoliittymäluonnos](https://github.com/mhamaril/ot-harjoitustyo/tree/master/dokumentaatio/kayttoliittymaluonnos.jpg)
 
 Sovellus aukeaa perusnäkymään, jossa on mahdollista tehdä erilaisia laskutoimituksia matriiseilla.
 
@@ -27,11 +27,17 @@ Sovellus aukeaa perusnäkymään, jossa on mahdollista tehdä erilaisia laskutoi
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla:
-- Lisätään sama ominaisuus myös B matriisille: Käyttäjä voi ottaa B matriisista determinantin, käänteismatriisin tai transpoosin
-- Korjataan "Vastaus"- ikkuna
+- [x] Lisätään sama ominaisuus myös B matriisille: Käyttäjä voi ottaa B matriisista determinantin, käänteismatriisin tai transpoosin
+
+- [x] Korjataan "Vastaus"- ikkuna
+
+- [x] Lisätään mahdollisuus laskea saadulla tuloksella uusia laskutoimituksia
+
+- [x] Lisätään muita matriisien laskutoimituksia
+
 - Lisätään mahdollisuus muuttaa neliömatriisin kokoa "+" ja "-" napeista
-- Lisätään muita matriisien laskutoimituksia
 - Lisätään mahdollisuus tehdä erikokoisia matriiseja esim. 3x4 matriiseja
 - Lisätään mahdollisuus laskea yhtälöryhmillä eri laskutoimituksia, tämä lisäisi yhden näkymän lisää
 - Pyritään kasvattamaan suurimman sallitun matriisin kokoa
-- Lisätään mahdollisuus laskea saadulla tuloksella uusia laskutoimituksia
+
+

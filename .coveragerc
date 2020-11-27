@@ -1,3 +1,3 @@
 [run]
-source = src
-omit = src/tests/**,src/ui/**,src/index.py, laskarit/**
+source = ot-harjoitustyo
+omit = ot-harjoitustyo/src/tests/**,ot-harjoitustyo/src/ui/**,ot-harjoitustyo/src/index.py, ot-harjoitustyo/laskarit/viikko2/**

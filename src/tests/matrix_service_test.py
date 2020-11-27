@@ -3,14 +3,11 @@ import numpy as np
 from tkinter import Tk
 
 from services.matrix_service import MatrixService
-from gui.main_view import MainView
 
 class TestMatrixService(unittest.TestCase):
     
     def setUp(self):
-        window = Tk()
-        self.root = MainView(window, "Matrix Calculator")
-        self.matrix_service = MatrixService(self.root)
+        self.matrix_service = MatrixService()
         self.matrix_service.matrix_a = np.array([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])
         self.matrix_service.matrix_b = np.array([[9.0, 8.0, 7.0], [6.0, 5.0, 4.0], [3.0, 2.0, 1.0]])
         self.multiplier = 2

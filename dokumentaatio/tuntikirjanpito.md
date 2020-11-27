@@ -9,8 +9,8 @@
 | 20.11.| 3    | lisää refraktorointi            |
 | 21.11.| 3    | testien korjaukset luokille     |
 | 24.11.| 2    | lisää testien korjausta         |
+| 26.11.| 3    | matriisin koon muutoksen luontia|
+| 27.11.| 4    | refraktorointia                 |
 |       |      |                                 |
 |       |      |                                 |
-|       |      |                                 |
-|       |      |                                 |
-| yht   | 19   |                                 | 
+| yht   | 26   |                                 | 

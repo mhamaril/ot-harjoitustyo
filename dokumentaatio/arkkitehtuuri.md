@@ -32,7 +32,7 @@ Toiminnallisista kokonaisuuksista vastaa luokka [MatrixService](../src/services/
 
 ## Päätoiminnallisuudet
 
-Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.
+Kuvataan seuraavaksi sovelluksen toimintalogiikka yhden päätoiminnallisuuden osalta sekvenssikaaviona.
 
 ### Syötteiden kirjaaminen sekä laskutoimitus
 

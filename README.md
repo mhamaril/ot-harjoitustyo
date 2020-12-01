@@ -6,6 +6,10 @@ Sovelluksen avulla voi tehdä matriisien välisiä laskutoimituksia. Tällä het
 
 Sovelluksen toiminta on testattu Python-versiolla `3.9.0`. Etenkin vanhempien Python-versioiden kanssa saattaa ilmentyä ongelmia.
 
+## Versiot
+
+[Ensimmäinen release](https://github.com/mhamaril/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Dokumentaatio
 
 [Vaativuusmäärittely](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/Vaativuusmaarittely.md)
@@ -61,3 +65,11 @@ python3 -m pipenv run coverage-report
 ```
 
 Raportti generoituu _htmlcov_-hakemistoon.
+
+### Pylint
+
+Tiedoston [.pylintrc](./.pylintrc) määrittelemät tarkistukset voi suorittaa komennolla:
+
+```bash
+python3 -m pipenv run lint
+```

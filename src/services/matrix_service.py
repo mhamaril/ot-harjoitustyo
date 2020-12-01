@@ -4,7 +4,7 @@ class MatrixService:
     def __init__(self):
         self.matrix_a = []
         self.matrix_b = []
-            
+
     def return_values_to_service_a(self, matrix_a):
         self.matrix_a = np.array(matrix_a)
         return self.matrix_a
@@ -59,10 +59,3 @@ class MatrixService:
 
     def a_minus_b(self):
         return self.matrix_a - self.matrix_b
-    
-    # def flip_and_return_matrices(self):
-    #     pass
-
-    # def draw_matrix_a(self, matrix_a):
-
-

@@ -8,6 +8,10 @@ Ohjelman rakenne noudattelee kaksitasoista kerrosarkkitehtuuria, ja koodin pakka
 
 Pakkaus _gui_ sisältää käyttöliittymästä ja _services_ sovelluslogiikasta vastaavan koodin.
 
+Ohjelman luokkakaavio on seuraavan lainen.
+
+![Luokkakaavio](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/luokkakaavio.jpg)
+
 ## Käyttöliittymä
 
 Käyttöliittymä sisältää tällä hetkellä yhden näkymän:
@@ -28,7 +32,7 @@ Toiminnallisista kokonaisuuksista vastaa luokka [MatrixService](../src/services/
 
 ## Päätoiminnallisuudet
 
-Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.
+Kuvataan seuraavaksi sovelluksen toimintalogiikka yhden päätoiminnallisuuden osalta sekvenssikaaviona.
 
 ### Syötteiden kirjaaminen sekä laskutoimitus
 

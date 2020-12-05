@@ -37,6 +37,8 @@ Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seura
 
 - [x] Lisätään mahdollisuus muuttaa neliömatriisin kokoa "+" ja "-" napeista
 
+- [x] Lisätään varoitus vääristä syötteistä
+
 - Lisätään mahdollisuus tehdä erikokoisia matriiseja esim. 3x4 matriiseja
 - Lisätään "varoituslaatikko", joka ilmoittaa jos jotain laskutoimitusta ei voida tehdä
 - Lisätään mahdollisuus laskea yhtälöryhmillä eri laskutoimituksia, tämä lisäisi yhden näkymän lisää

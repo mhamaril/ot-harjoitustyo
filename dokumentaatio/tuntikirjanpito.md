@@ -11,6 +11,6 @@
 | 24.11.| 2    | lisää testien korjausta         |
 | 26.11.| 3    | matriisin koon muutoksen luontia|
 | 27.11.| 4    | refraktorointia                 |
+| 05.12.| 3    | virheilmoituksen lisääminen     |
 |       |      |                                 |
-|       |      |                                 |
-| yht   | 26   |                                 | 
+| yht   | 29   |                                 | 

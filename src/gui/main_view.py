@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 from services.matrix_service import MatrixService
 
@@ -88,9 +89,11 @@ class MainView:
         button_clear_a = Button(
             master=self.frame, text="Clear", width=7, command=self.clear_a)
         button_clear_a.grid(row=8, column=0)
-        button_size_up_matrix_a = Button(master=self.frame, text="+", width=7, command=self.size_up)
+        button_size_up_matrix_a = Button(
+            master=self.frame, text="+", width=7, command=self.size_up)
         button_size_up_matrix_a.grid(row=8, column=1)
-        button_size_down_matrix_a = Button(master=self.frame, text="-", width=7, command=self.size_down)
+        button_size_down_matrix_a = Button(
+            master=self.frame, text="-", width=7, command=self.size_down)
         button_size_down_matrix_a.grid(row=8, column=2)
         button_clear_b = Button(
             master=self.frame, text="Clear", width=7, command=self.clear_b)
@@ -106,8 +109,10 @@ class MainView:
         button_insert_in_b = Button(
             master=self.frame, text="Insert in B", width=17, command=self.insert_result_in_b)
         button_insert_in_b.grid(row=21, column=4, columnspan=2)
+        
+        
         self.frame.pack()
-
+    
     def create_matrix_a(self, n):
         self.matrix_a = []
         for i in range(n):
@@ -139,7 +144,7 @@ class MainView:
                 temp.grid(row=i+14, column=j+4)
                 row.append(temp)
             self.result.append(row)
-
+    
     def transpose_a(self):
         matrix = self.get_values_from_matrix_a()
         self.matrix_service.return_values_to_service_a(matrix)
@@ -176,27 +181,43 @@ class MainView:
     def multiply_by_a(self):
         matrix = self.get_values_from_matrix_a()
         self.matrix_service.return_values_to_service_a(matrix)
-        self.result_values = self.matrix_service.multiply_matrix_a_by(float(self.m_b_a.get()))
-        self.show_results()
+        try:
+            self.result_values = self.matrix_service.multiply_matrix_a_by(
+                float(self.m_b_a.get()))
+            self.show_results()
+        except ValueError:
+            messagebox.showerror("Wrong Input", f"Check Multiplier Matrix ")
+                
+    def multiply_by_b(self):
+        matrix = self.get_values_from_matrix_b()
+        self.matrix_service.return_values_to_service_b(matrix)
+        try:
+            self.result_values = self.matrix_service.multiply_matrix_b_by(
+                float(self.m_b_b.get()))
+            self.show_results()
+        except ValueError:
+            messagebox.showerror("Wrong Input", f"Check Multiplier Matrix B")
 
     def power_of_a(self):
         matrix = self.get_values_from_matrix_a()
         self.matrix_service.return_values_to_service_a(matrix)
-        self.result_values = self.matrix_service.power_of_matrix_a(int(self.p_o_a.get()))
-        self.show_results()
+        try:
+            self.result_values = self.matrix_service.power_of_matrix_a(
+                int(self.p_o_a.get()))
+            self.show_results()
+        except:
+            messagebox.showerror("Wrong Input", f"Check Exponent Matrix A")
 
     def power_of_b(self):
         matrix = self.get_values_from_matrix_b()
         self.matrix_service.return_values_to_service_b(matrix)
-        self.result_values = self.matrix_service.power_of_matrix_b(int(self.p_o_b.get()))
-        self.show_results()
+        try:
+            self.result_values = self.matrix_service.power_of_matrix_b(
+                int(self.p_o_b.get()))
+            self.show_results()
+        except:
+            messagebox.showerror("Wrong Input", f"Check Exponent Matrix B")
 
-    def multiply_by_b(self):
-        matrix = self.get_values_from_matrix_b()
-        self.matrix_service.return_values_to_service_b(matrix)
-        self.result_values = self.matrix_service.multiply_matrix_b_by(float(self.m_b_b.get()))
-        self.show_results()
-    
     def axb(self):
         matrix_a = self.get_values_from_matrix_a()
         self.matrix_service.return_values_to_service_a(matrix_a)
@@ -247,19 +268,35 @@ class MainView:
 
     def get_values_from_matrix_a(self):
         self.matrix_a_values = []
+        i = j = 0
         for value in self.matrix_a:
             row = []
+            i += 1
             for x in value:
-                row.append(float(x.get()))
+                j += 1
+                try:
+                    row.append(float(x.get()))
+                except ValueError:
+                    messagebox.showerror(
+                        "Wrong Input", f"Check Input in Matrix A Row {i} Column {j}")
+            j = 0
             self.matrix_a_values.append(row)
         return self.matrix_a_values
 
     def get_values_from_matrix_b(self):
         self.matrix_b_values = []
+        i = j = 0
         for value in self.matrix_b:
             row = []
+            i += 1
             for x in value:
-                row.append(float(x.get()))
+                j += 1
+                try:
+                    row.append(float(x.get()))
+                except ValueError:
+                    messagebox.showerror(
+                        "Wrong Input", f"Check Input in Matrix B Row {i} Column {j}")
+            j = 0
             self.matrix_b_values.append(row)
         return self.matrix_b_values
 

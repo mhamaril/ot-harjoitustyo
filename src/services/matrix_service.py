@@ -67,31 +67,29 @@ class MatrixService:
 
     def inverse_matrix_a(self):
         """Calculates and returns inverse of matrix A if possible else returns
-            string "Not Invertible"
+            empty list
 
         Returns:
             np.array: Numpy array list
-            str: String
         """
         try:
             mat_inv_a = np.linalg.inv(self.matrix_a)
             return mat_inv_a
-        except:
-            return "Not Invertible"
+        except np.linalg.LinAlgError:
+            return []
 
     def inverse_matrix_b(self):
         """Calculates and returns inverse of matrix B if possible else returns
-            string "Not Invertible" 
+            empty list
 
         Returns:
             np.array: Numpy array list
-            str: String
         """
         try:
             mat_inv_b = np.linalg.inv(self.matrix_b)
             return mat_inv_b
-        except:
-            return "Not Invertible"
+        except np.linalg.LinAlgError:
+            return []
 
     def multiply_matrix_a_by(self, multiplier):
         """Multiplies matrix A with a float number and returns result
@@ -101,6 +99,7 @@ class MatrixService:
 
         Returns:
             np.array: Numpy array list
+            str: String
         """
         return multiplier*self.matrix_a
 

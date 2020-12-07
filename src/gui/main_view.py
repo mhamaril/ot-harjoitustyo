@@ -36,94 +36,12 @@ class MainView:
         """
         self.clear_view()
         self.root.title(self.title)
-        matrix_a = Label(master=self.frame, text="Matrix A")
-        matrix_b = Label(master=self.frame, text="Matrix B")
-        matrix_a.grid(row=0, column=0)
-        matrix_b.grid(row=0, column=8)
         self.create_matrix_a(n)
         self.create_matrix_b(n)
         self.create_result(n)
-        button_inverse_a = Button(
-            master=self.frame, text="Inv(A)", width=7, command=self.inverse_a)
-        button_inverse_a.grid(row=9, column=1)
-        button_transpose_a = Button(
-            master=self.frame, text="Trans(A)", width=7, command=self.transpose_a)
-        button_transpose_a.grid(row=9, column=0)
-        button_determinant_a = Button(
-            master=self.frame, text="Det(A)", width=7, command=self.determinant_a)
-        button_determinant_a.grid(row=9, column=2)
-
-        button_multiply_by_a = Button(
-            master=self.frame, text="Multiply by", width=17, command=self.multiply_by_a)
-        button_multiply_by_a.grid(row=10, column=0, columnspan=2)
-        self.m_b_a = Entry(master=self.frame, width=9, borderwidth=5)
-        self.m_b_a.grid(row=10, column=2)
-
-        button_multiply_by_b = Button(
-            master=self.frame, text="Multiply by", width=17, command=self.multiply_by_b)
-        button_multiply_by_b.grid(row=10, column=8, columnspan=2)
-        self.m_b_b = Entry(master=self.frame, width=9, borderwidth=5)
-        self.m_b_b.grid(row=10, column=10)
-
-        button_power_of_a = Button(
-            master=self.frame, text="Raise to power of", width=17, command=self.power_of_a)
-        button_power_of_a.grid(row=11, column=0, columnspan=2)
-        self.p_o_a = Entry(master=self.frame, width=9, borderwidth=5)
-        self.p_o_a.grid(row=11, column=2)
-
-        button_power_of_b = Button(
-            master=self.frame, text="Raise to power of", width=17, command=self.power_of_b)
-        button_power_of_b.grid(row=11, column=8, columnspan=2)
-        self.p_o_b = Entry(master=self.frame, width=9, borderwidth=5)
-        self.p_o_b.grid(row=11, column=10)
-
-        button_inverse_b = Button(
-            master=self.frame, text="Inv(B)", width=7, command=self.inverse_b)
-        button_inverse_b.grid(row=9, column=9)
-        button_transpose_b = Button(
-            master=self.frame, text="Trans(B)", width=7, command=self.transpose_b)
-        button_transpose_b.grid(row=9, column=8)
-        button_determinant_b = Button(
-            master=self.frame, text="Det(B)", width=7, command=self.determinant_b)
-        button_determinant_b.grid(row=9, column=10)
-
-        button_axb = Button(master=self.frame, text="A x B", width=7,
-                            command=self.axb)
-        button_axb.grid(row=3, column=7)
-        button_a_add_b = Button(master=self.frame, text="A + B",
-                                width=7, command=self.a_add_b)
-        button_a_add_b.grid(row=4, column=7)
-        button_a_subs_b = Button(
-            master=self.frame, text="A - B", width=7, command=self.a_subs_b)
-        button_a_subs_b.grid(row=5, column=7)
-        button_flip_matrices = Button(
-            master=self.frame, text="Flip", width=7, command=self.flip_matrices)
-        button_flip_matrices.grid(row=1, column=7)
-        button_clear_a = Button(
-            master=self.frame, text="Clear", width=7, command=self.clear_a)
-        button_clear_a.grid(row=8, column=0)
-        button_size_up_matrix_a = Button(
-            master=self.frame, text="+", width=7, command=self.size_up)
-        button_size_up_matrix_a.grid(row=8, column=1)
-        button_size_down_matrix_a = Button(
-            master=self.frame, text="-", width=7, command=self.size_down)
-        button_size_down_matrix_a.grid(row=8, column=2)
-        button_clear_b = Button(
-            master=self.frame, text="Clear", width=7, command=self.clear_b)
-        button_clear_b.grid(row=8, column=8)
-        button_size_up_matrix_b = Button(
-            master=self.frame, text="+", width=7, command=self.size_up)
-        button_size_up_matrix_b.grid(row=8, column=9)
-        button_size_down_matrix_b = Button(
-            master=self.frame, text="-", width=7, command=self.size_down)
-        button_size_down_matrix_b.grid(row=8, column=10)
-
-        button_insert_in_a = Button(
-            master=self.frame, text="Insert in A", width=17, command=self.insert_result_in_a)
-        button_insert_in_a.grid(row=13, column=4, columnspan=2)
-        button_insert_in_b = Button(
-            master=self.frame, text="Insert in B", width=17, command=self.insert_result_in_b)
-        button_insert_in_b.grid(row=21, column=4, columnspan=2)
+        self.create_buttons_for_matrix_a()
+        self.create_buttons_for_matrix_b()
+        self.create_other_buttons()
 
         self.frame.pack()
 
@@ -136,6 +54,8 @@ class MainView:
         Returns:
             list: Entries for Matrix A in list
         """
+        matrix_a_label = Label(master=self.frame, text="Matrix A")
+        matrix_a_label.grid(row=0, column=0)
         self.matrix_a = []
         for i in range(n):
             row  = []
@@ -155,6 +75,8 @@ class MainView:
         Returns:
             list: Entries for Matrix B in list
         """
+        matrix_b_label = Label(master=self.frame, text="Matrix B")
+        matrix_b_label.grid(row=0, column=8)
         self.matrix_b = []
         for i in range(n):
             row  = []
@@ -182,6 +104,96 @@ class MainView:
                 row.append(temp)
             self.result.append(row)
         return self.result
+    
+    def create_buttons_for_matrix_a(self):
+        """Creates buttons for Matrix A
+        """
+        button_inverse_a = Button(
+            master=self.frame, text="Inv(A)", width=7, command=self.inverse_a)
+        button_inverse_a.grid(row=9, column=1)
+        button_transpose_a = Button(
+            master=self.frame, text="Trans(A)", width=7, command=self.transpose_a)
+        button_transpose_a.grid(row=9, column=0)
+        button_determinant_a = Button(
+            master=self.frame, text="Det(A)", width=7, command=self.determinant_a)
+        button_determinant_a.grid(row=9, column=2)
+
+        button_multiply_by_a = Button(
+            master=self.frame, text="Multiply by", width=17, command=self.multiply_by_a)
+        button_multiply_by_a.grid(row=10, column=0, columnspan=2)
+        self.m_b_a = Entry(master=self.frame, width=9, borderwidth=5)
+        self.m_b_a.grid(row=10, column=2)
+        button_power_of_a = Button(
+            master=self.frame, text="Raise to power of", width=17, command=self.power_of_a)
+        button_power_of_a.grid(row=11, column=0, columnspan=2)
+        self.p_o_a = Entry(master=self.frame, width=9, borderwidth=5)
+        self.p_o_a.grid(row=11, column=2)
+
+        button_clear_a = Button(
+            master=self.frame, text="Clear", width=7, command=self.clear_a)
+        button_clear_a.grid(row=8, column=0)
+        button_size_up_matrix_a = Button(
+            master=self.frame, text="+", width=7, command=self.size_up)
+        button_size_up_matrix_a.grid(row=8, column=1)
+        button_size_down_matrix_a = Button(
+            master=self.frame, text="-", width=7, command=self.size_down)
+        button_size_down_matrix_a.grid(row=8, column=2)
+
+    def create_buttons_for_matrix_b(self):
+        """Creates buttons for Matrix B
+        """
+        button_inverse_b = Button(
+            master=self.frame, text="Inv(B)", width=7, command=self.inverse_b)
+        button_inverse_b.grid(row=9, column=9)
+        button_transpose_b = Button(
+            master=self.frame, text="Trans(B)", width=7, command=self.transpose_b)
+        button_transpose_b.grid(row=9, column=8)
+        button_determinant_b = Button(
+            master=self.frame, text="Det(B)", width=7, command=self.determinant_b)
+        button_determinant_b.grid(row=9, column=10)
+
+        button_multiply_by_b = Button(
+            master=self.frame, text="Multiply by", width=17, command=self.multiply_by_b)
+        button_multiply_by_b.grid(row=10, column=8, columnspan=2)
+        self.m_b_b = Entry(master=self.frame, width=9, borderwidth=5)
+        self.m_b_b.grid(row=10, column=10)
+        button_power_of_b = Button(
+            master=self.frame, text="Raise to power of", width=17, command=self.power_of_b)
+        button_power_of_b.grid(row=11, column=8, columnspan=2)
+        self.p_o_b = Entry(master=self.frame, width=9, borderwidth=5)
+        self.p_o_b.grid(row=11, column=10)
+
+        button_clear_b = Button(
+            master=self.frame, text="Clear", width=7, command=self.clear_b)
+        button_clear_b.grid(row=8, column=8)
+        button_size_up_matrix_b = Button(
+            master=self.frame, text="+", width=7, command=self.size_up)
+        button_size_up_matrix_b.grid(row=8, column=9)
+        button_size_down_matrix_b = Button(
+            master=self.frame, text="-", width=7, command=self.size_down)
+        button_size_down_matrix_b.grid(row=8, column=10)
+
+    def create_other_buttons(self):
+        """Greates rest of the buttons
+        """
+        button_axb = Button(master=self.frame, text="A x B", width=7,
+                            command=self.axb)
+        button_axb.grid(row=3, column=7)
+        button_a_add_b = Button(master=self.frame, text="A + B",
+                                width=7, command=self.a_add_b)
+        button_a_add_b.grid(row=4, column=7)
+        button_a_subs_b = Button(
+            master=self.frame, text="A - B", width=7, command=self.a_subs_b)
+        button_a_subs_b.grid(row=5, column=7)
+        button_flip_matrices = Button(
+            master=self.frame, text="Flip", width=7, command=self.flip_matrices)
+        button_flip_matrices.grid(row=1, column=7)
+        button_insert_in_a = Button(
+            master=self.frame, text="Insert in A", width=17, command=self.insert_result_in_a)
+        button_insert_in_a.grid(row=13, column=4, columnspan=2)
+        button_insert_in_b = Button(
+            master=self.frame, text="Insert in B", width=17, command=self.insert_result_in_b)
+        button_insert_in_b.grid(row=21, column=4, columnspan=2)
 
     def transpose_a(self):
         """Calls matrix_service for matrix calculation and show result

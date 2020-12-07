@@ -12,5 +12,5 @@
 | 26.11.| 3    | matriisin koon muutoksen luontia|
 | 27.11.| 4    | refraktorointia                 |
 | 05.12.| 3    | virheilmoituksen lisääminen     |
-|       |      |                                 |
-| yht   | 29   |                                 | 
+| 06.12.| 3    | try-except virheilmon korjaus   |
+| yht   | 32   |                                 | 

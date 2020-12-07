@@ -17,7 +17,7 @@ python3 -m pipenv run start
 
 Sovellus käynnistyy näkymään, jossa on kaksi 3x3 matriisia ja useita painikkeita joilla voi suorittaa laskutoimituksia. Matriisin kokoa muutetaan + ja - painikkeista 2x2 matriisin ollessa pienin sallittu ja isoin mahdollinen on matriisi on 7x7.
 
-![](./kuvat/kayttoohje-kirjautuminen.png)
+![Perusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/perusnakyma.jpg)
 
 
 
@@ -25,7 +25,7 @@ Sovellus käynnistyy näkymään, jossa on kaksi 3x3 matriisia ja useita painikk
 
 Täytä matriisiin arvot ja paina haluttua laskutoimitusta esittävää painiketta. Tulos näytetään Result matriisissa.
 
-![](./kuvat/kayttoohje-uusi-kayttaja.png)
+![Perustoiminnallisuus](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/perustoiminto.jpg)
 
 ## Matriisien vaihtaminen
 

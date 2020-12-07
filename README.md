@@ -8,7 +8,7 @@ Sovelluksen toiminta on testattu Python-versiolla `3.9.0`. Etenkin vanhempien Py
 
 ## Versiot
 
-[Toinen release](https://github.com/mhamaril/ot-harjoitustyo/releases/tag/viikko6)
+[Toinen release](https://github.com/mhamaril/ot-harjoitustyo/releases/tag/viikko6-2)
 
 ## Dokumentaatio
 

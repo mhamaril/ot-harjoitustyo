@@ -2,6 +2,12 @@ import numpy as np
 
 class MatrixService:
     """Class responsible of services
+
+    Args:
+            user_repository:
+                Vapaaehtoinen, oletusarvoltaan UserRepository-olio.
+                Olio, jolla on UserRepository-luokkaa vastaavat metodit.
+
     """
     def __init__(self):
         self.matrix_a = []
@@ -159,3 +165,5 @@ class MatrixService:
             np.array: Numpy array list
         """
         return self.matrix_a - self.matrix_b
+
+matrix_service = MatrixService()

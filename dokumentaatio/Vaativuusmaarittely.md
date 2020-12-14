@@ -39,9 +39,11 @@ Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seura
 
 - [x] Lisätään varoitus vääristä syötteistä
 
+- [x] Lisätään rekisteröintimahdollisuus, jolla saa lisää ominaisuuksia sovellukseen
+
 - Lisätään mahdollisuus tehdä erikokoisia matriiseja esim. 3x4 matriiseja
 - Lisätään "varoituslaatikko", joka ilmoittaa jos jotain laskutoimitusta ei voida tehdä
 - Lisätään mahdollisuus laskea yhtälöryhmillä eri laskutoimituksia, tämä lisäisi yhden näkymän lisää
 - Pyritään kasvattamaan suurimman sallitun matriisin kokoa
-
+  - Tämän voisi tehdä kohtuu helposti, mutta se ei olisi kovin mielekästä
 

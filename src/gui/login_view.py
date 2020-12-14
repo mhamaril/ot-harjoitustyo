@@ -1,9 +1,10 @@
-from tkinter import ttk, StringVar, constants
+from tkinter import Tk, ttk, StringVar, constants
 from services.user_service import user_service, InvalidCredentials
 
 
 class LoginView:
-    def __init__(self, root, handle_login, handle_show_create_user_view, handle_show_limited_view):
+    def __init__(self, root, handle_login, handle_show_create_user_view,
+        handle_show_limited_view):
         self.root = root
         self.handle_login = handle_login
         self.handle_show_create_user_view = handle_show_create_user_view
@@ -13,7 +14,6 @@ class LoginView:
         self.password_entry = None
         self.error_variable = None
         self.error_label = None
-
         self.initialize()
 
     def login_handler(self):
@@ -51,7 +51,6 @@ class LoginView:
 
     def initialize(self):
         self.frame = ttk.Frame(master=self.root)
-
         self.error_variable = StringVar(self.frame)
 
         self.error_label = ttk.Label(

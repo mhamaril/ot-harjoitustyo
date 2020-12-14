@@ -4,17 +4,20 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [scripts]
-start = "python3 src/index.py"
-test = "pytest src"
-coverage = "coverage run --branch -m pytest src"
-coverage-report = "coverage html"
+start = "python src/index.py"
+build = "python src/build.py"
 lint = "pylint src"
 format = "autopep8 --in-place --recursive src"
+test = "pytest"
+coverage = "coverage run --branch -m pytest"
+coverage-report = "coverage html"
+
 [dev-packages]
 
 [packages]
-pytest = "*"
-numpy = "*"
-coverage = "*"
 pylint = "*"
 autopep8 = "*"
+pytest = "*"
+pytest-dotenv = "*"
+coverage = "*"
+numpy = "*"

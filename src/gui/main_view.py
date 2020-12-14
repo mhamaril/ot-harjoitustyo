@@ -2,12 +2,14 @@ from tkinter import *
 from tkinter import messagebox
 
 from services.matrix_service import MatrixService
+from services.user_service import user_service
+
 
 
 class MainView:
     """Class that creates view for matrix calculator
     """
-    def __init__(self, root, title):
+    def __init__(self, root, title, version, handle_show_login_view, handle_logout):
         """Constructor for the class which creates Matrix Claculator view
 
         Args:
@@ -17,6 +19,8 @@ class MainView:
         self.root = root
         self.title = title
         self.size = 3
+        self.handle_show_login_view = handle_show_login_view
+        self.handle_logout = handle_logout
         self.matrix_service = MatrixService()
         self.frame = Frame(master=self.root)
         self.matrix_a = []
@@ -26,22 +30,27 @@ class MainView:
         self.matrix = [[]]
         self.result = []
         self.result_values = []
-        self.initialize_view(self.size)
+        self.initialize_view(self.size, version)
 
-    def initialize_view(self, n):
+    def initialize_view(self, n, version):
         """Creates Matrix Calculator view
 
         Args:
             n (int): Size of the side of square matrix
         """
-        self.clear_view()
+        self.destroy()
         self.root.title(self.title)
         self.create_matrix_a(n)
-        self.create_matrix_b(n)
-        self.create_result(n)
         self.create_buttons_for_matrix_a()
-        self.create_buttons_for_matrix_b()
-        self.create_other_buttons()
+        self.create_result(n)
+        if version == 1:
+            self.create_full_version_button()
+        if version == 2:
+            self.create_matrix_b(n)
+            self.create_size_buttons_for_matrix_a()
+            self.create_size_buttons_for_matrix_b()
+            self.create_buttons_for_matrix_b()
+            self.create_other_buttons()
 
         self.frame.pack()
 
@@ -132,6 +141,8 @@ class MainView:
         button_clear_a = Button(
             master=self.frame, text="Clear", width=7, command=self.clear_a)
         button_clear_a.grid(row=8, column=0)
+    
+    def create_size_buttons_for_matrix_a(self):
         button_size_up_matrix_a = Button(
             master=self.frame, text="+", width=7, command=self.size_up)
         button_size_up_matrix_a.grid(row=8, column=1)
@@ -166,6 +177,8 @@ class MainView:
         button_clear_b = Button(
             master=self.frame, text="Clear", width=7, command=self.clear_b)
         button_clear_b.grid(row=8, column=8)
+
+    def create_size_buttons_for_matrix_b(self):
         button_size_up_matrix_b = Button(
             master=self.frame, text="+", width=7, command=self.size_up)
         button_size_up_matrix_b.grid(row=8, column=9)
@@ -174,7 +187,7 @@ class MainView:
         button_size_down_matrix_b.grid(row=8, column=10)
 
     def create_other_buttons(self):
-        """Greates rest of the buttons
+        """Creates rest of the buttons
         """
         button_axb = Button(master=self.frame, text="A x B", width=7,
                             command=self.axb)
@@ -194,6 +207,13 @@ class MainView:
         button_insert_in_b = Button(
             master=self.frame, text="Insert in B", width=17, command=self.insert_result_in_b)
         button_insert_in_b.grid(row=21, column=4, columnspan=2)
+        button_logout = Button(master=self.frame, text="Logout", width=17, command=self.handle_logout)
+        button_logout.grid(row=21, column=0, columnspan=2)
+    
+    def create_full_version_button(self):
+        button_log_in = Button(
+            master=self.frame, text="Full Version", width=17, command=self.handle_show_login_view)
+        button_log_in.grid(row=21, column=0, columnspan=2)
 
     def transpose_a(self):
         """Calls matrix_service for matrix calculation and show result
@@ -462,7 +482,7 @@ class MainView:
             for j in range(self.size):
                 value[j].delete(0, END)
 
-    def clear_view(self):
+    def destroy(self):
         """Clear view and destroy every widget
         """
         for widget in self.frame.winfo_children():
@@ -475,7 +495,7 @@ class MainView:
         self.size += 1
         if self.size >= 8:
             self.size = 7
-        self.initialize_view(self.size)
+        self.initialize_view(self.size, 2)
 
     def size_down(self):
         """Decrease size of matrices by 1
@@ -484,4 +504,8 @@ class MainView:
             self.size = 2
         else:
             self.size -= 1
-            self.initialize_view(self.size)
+            self.initialize_view(self.size, 2)
+    
+    def logout_handler(self):
+        user_service.logout()
+        self.handle_logout()

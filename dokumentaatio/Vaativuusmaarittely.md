@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Sovelluksen avulla voidaan tehdä erilaisia laskutoimituksia matriiseilla. Sovellus ei vaadi rekisteröitymistä.
+Sovelluksen avulla voidaan tehdä erilaisia laskutoimituksia matriiseilla. Rekisteröitymällä saa sovellukseen käyttöönsä lisää ominaisuuksia.
 
 ## Käyttäjät
 
@@ -27,6 +27,7 @@ Sovellus aukeaa perusnäkymään, jossa on mahdollista tehdä erilaisia laskutoi
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla:
+
 - [x] Lisätään sama ominaisuus myös B matriisille: Käyttäjä voi ottaa B matriisista determinantin, käänteismatriisin tai transpoosin
 
 - [x] Korjataan "Vastaus"- ikkuna
@@ -42,7 +43,7 @@ Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seura
 - [x] Lisätään rekisteröintimahdollisuus, jolla saa lisää ominaisuuksia sovellukseen
 
 - Lisätään mahdollisuus tehdä erikokoisia matriiseja esim. 3x4 matriiseja
-- Lisätään "varoituslaatikko", joka ilmoittaa jos jotain laskutoimitusta ei voida tehdä
+  - Lisätään "varoituslaatikko", joka ilmoittaa jos jotain laskutoimitusta ei voida tehdä
 - Lisätään mahdollisuus laskea yhtälöryhmillä eri laskutoimituksia, tämä lisäisi yhden näkymän lisää
 - Pyritään kasvattamaan suurimman sallitun matriisin kokoa
   - Tämän voisi tehdä kohtuu helposti, mutta se ei olisi kovin mielekästä

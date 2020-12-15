@@ -49,7 +49,7 @@ Luokka noudattaa [Repository](https://en.wikipedia.org/wiki/Data_access_object) 
 
 Sovellus tallettaa käyttäjien tiedot erillisiin tiedostoihin.
 
-Sovelluksen juureen sijoitettu [konfiguraatiotiedosto](./kayttoohje.md#konfiguraatiotiedosto) [.env](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/.env) määrittelee tiedostojen nimet.
+Sovelluksen juureen sijoitettu [konfiguraatiotiedosto](./kayttoohje.md#konfiguraatiotiedosto) [.env](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/data/.env) määrittelee tiedostojen nimet.
 
 Käyttäjät tallennetaan SQLite-tietokannan tauluun `users`, joka alustetaan [initialize_database.py](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/initialize_database.py)-tiedostossa.
 

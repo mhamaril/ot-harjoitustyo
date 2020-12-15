@@ -34,11 +34,11 @@ Sovellus käynnistyy rajoitettuun versioon, jossa on yksi 3x3 matriisi ja useita
 
 "Full Version"- painikkeesta pääsee kirjautumisnäkymään:
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/luok%C3%A4ytt%C3%A4j%C3%A4n%C3%A4kym%C3%A4.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kirjautumisn%C3%A4kym%C3%A4.jpg)
 
 Kirjautuminen onnistuu kirjoittamalla olemassa oleva käyttäjätunnus sekä oikea salasana syötekenttään ja painamalla "Login"- painiketta. Voi myös palata takaisin kirjautumatta "Limited Version"- painikkeesta.
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kirjautumisn%C3%A4kym%C3%A4.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/luok%C3%A4ytt%C3%A4j%C3%A4n%C3%A4kym%C3%A4.jpg)
 
 ## Uuden käyttäjän luominen
 

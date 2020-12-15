@@ -10,7 +10,7 @@ Pakkaus _gui_ sisältää käyttöliittymästä, _services_ sovelluslogiikasta j
 
 Ohjelman luokkakaavio on seuraavanlainen.
 
-![Luokkakaavio](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/luokkakaavio.jpg)
+![Luokkakaavio](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/luokka_pakkauskaavio.jpg)
 
 ## Käyttöliittymä
 

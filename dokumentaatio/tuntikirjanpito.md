@@ -13,6 +13,8 @@
 | 27.11.| 4    | refraktorointia                 |
 | 05.12.| 3    | virheilmoituksen lisääminen     |
 | 06.12.| 3    | try-except virheilmon korjaus   |
-| 11.12 | 2    | tietokannan suunnittelua        |
+| 11.12.| 2    | tietokannan suunnittelua        |
 | 12.12.| 2    | tietokannan luomista            |
-| yht   | 36   |                                 | 
+| 13.12.| 3    | tietokannan asennusta           |
+| 14.12.| 4    | sovelluksen viimeistelyä        |
+| yht   | 43   |                                 | 

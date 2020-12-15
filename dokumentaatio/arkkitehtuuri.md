@@ -6,7 +6,7 @@ Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakka
 
 ![Pakkausrakenne](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/pakkausrakenne.jpg)
 
-Pakkaus _gui_ sisältää käyttöliittymästä, _services_ sovelluslogiikasta ja _repositories_ tietojen pysyväistallennuksesta vastaavan koodin. Pakkaus _entities_ sisältää luokkia, jotka kuvastavat sovelluksen käyttämiä tietokohteita.
+Pakkaus _gui_ sisältää käyttöliittymästä, _services_ sovelluslogiikasta ja _repositories_ tietojen pysyväistallennuksesta vastaavan koodin. Pakkaus _entities_ sisältää luokan, joka kuvastaa sovelluksen käyttämiä tietokohteita.
 
 Ohjelman luokkakaavio on seuraavanlainen.
 

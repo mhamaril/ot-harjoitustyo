@@ -56,7 +56,15 @@ Käyttäjät tallennetaan SQLite-tietokannan tauluun `users`, joka alustetaan [i
 
 ## Päätoiminnallisuudet
 
-Kuvataan seuraavaksi sovelluksen toimintalogiikka yhden päätoiminnallisuuden osalta sekvenssikaaviona.
+Kuvataan seuraavaksi sovelluksen toimintalogiikka kahden päätoiminnallisuuden osalta sekvenssikaaviona.
+
+### Käyttäjän kirjaantuminen
+
+Kun kirjautumisnäkymän syötekenttiin kirjoitetetataan käyttäjätunnus ja salasana, jonka jälkeen klikataan painiketta _Login_, etenee sovelluksen kontrolli seuraavasti:
+
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio_kirjautuminen.jpg)
+
+Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/login_view.py#L19) kutsuu sovelluslogiikan `UserService` metodia [login](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/user_service.py#L43) antaen parametriksi käyttäjätunnuksen ja salasanan. Sovelluslogiikka selvittää `UserRepository`:n avulla onko käyttäjätunnus olemassa. Jos on, tarkastetaan täsmääkö salasanat. Jos salasanat täsmäävät, kirjautuminen onnistuu. Tämän seurauksena käyttöliittymä vaihtaa näkymäksi rajoittamattoman `MainView`:n, eli sovelluksen varsinaisen päänäkymän.
 
 ### Syötteiden kirjaaminen sekä laskutoimitus
 
@@ -67,7 +75,6 @@ Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](../src/gui/main_view.p
 ### Muut toiminnallisuudet
 
 Sama periaate toistoo sovelluksen kaikissa toiminnallisuuksissa, käyttöliittymän tapahtumakäsittelijä kutsuu sopivaa sovelluslogiikan metodia, sovelluslogiikka päivittää kirjautuneen käyttäjän tilaa. Kontrollin palatessa käyttäliittymään, päivitetään tarvittaessa todojen lista sekä aktiivinen näkymä.
-
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 

@@ -26,7 +26,7 @@ python3 -m pipenv run start
 
 ## Matriisilaskurin versio
 
-Sovellus käynnistyy rajoitettuun versioon, jossa on yksi 3x3 matriisi ja useita painikkeita joilla voi suorittaa laskutoimituksia. Vasemmalla alhaalla on "Full Veresion"- painike, josta pääsee kirjautumaan tai rekisteröitymään rajoittamattomaan versioon.
+Sovellus käynnistyy rajoitettuun versioon, jossa on yksi 3x3 matriisi ja useita painikkeita joilla voi suorittaa laskutoimituksia. Vasemmalla alhaalla on "Full Version"- painike, josta pääsee kirjautumaan tai rekisteröitymään rajoittamattomaan versioon.
 
 ## Kirjautuminen
 

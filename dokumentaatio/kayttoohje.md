@@ -1,6 +1,13 @@
 # Käyttöohje
-
+PÄIVITÄ RELEASE
 Lataa projektin viimeisimmän [releasen](https://github.com/ohjelmistotekniikka-hy/python-todo-app/releases) lähdekoodi valitsemalla _Assets_-osion alta _Source code_.
+
+## Konfigurointi
+
+Tallennukseen käytettävän tiedoston nimen voi halutessaan konfiguroida käynnistyshakemistossa _.env_-tiedostossa. Tiedosto luodaan automaattisesti _data_-hakemistoon, jos sitä ei siellä vielä ole. Tiedoston muoto on seuraava:
+```bash
+DATABASE_FILENAME=database.sqlite
+```
 
 ## Ohjelman käynnistäminen
 
@@ -8,17 +15,44 @@ Ennen ohjelman käynnistämistä, asenna riippuvuudet komennolla:
 ```bash
 python3 -m pipenv install
 ```
+Jonka jälkeen suorita alustustoimenpiteet komennolla:
+```bash
+python3 -m pipenv run build
+```
 Nyt ohjelman voi käynnistää komennolla:
 ```
 python3 -m pipenv run start
 ```
 
-## Matriisin koon valinta
+## Matriisilaskurin versio
 
-Sovellus käynnistyy näkymään, jossa on kaksi 3x3 matriisia ja useita painikkeita joilla voi suorittaa laskutoimituksia. Matriisin kokoa muutetaan + ja - painikkeista 2x2 matriisin ollessa pienin sallittu ja isoin mahdollinen on matriisi on 7x7.
+Sovellus käynnistyy rajoitettuun versioon, jossa on yksi 3x3 matriisi ja useita painikkeita joilla voi suorittaa laskutoimituksia. Vasemmalla alhaalla on "Full Veresion"- painike, josta pääsee kirjautumaan tai rekisteröitymään rajoittamattomaan versioon.
+
+## Kirjautuminen
+
+"Full Version"- painikkeesta pääsee kirjautumisnäkymään:
+
+KUVA
+
+Kirjautuminen onnistuu kirjoittamalla olemassa oleva käyttäjätunnus sekä oikea salasana syötekenttään ja painamalla "Login"- painiketta. Voi myös palata takaisin kirjautumatta "Limited Version"- painikkeesta.
+
+## Uuden käyttäjän luominen
+
+Kirjautumisnäkymästä on mahdollista siirtyä uuden käyttäjän luomisnäkymään panikkeella "Create user".
+
+Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla "Create"-painiketta:
+
+![](./kuvat/kayttoohje-uusi-kayttaja.png)
+
+Jos käyttäjän luominen onnistuu, siirrytään täyden version näkymään.
+
+![](./kuvat/kayttoohje-uusi-kayttaja.png)
+
+## Matriisin koon muuttaminen
+
+Matriisin kokoa muutetaan + ja - painikkeista 2x2 matriisin ollessa pienin sallittu ja isoin mahdollinen on matriisi on 7x7.
 
 ![Perusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/perusnakyma.jpg)
-
 
 
 ## Laskutoimitukset matriiseleilla

@@ -47,9 +47,9 @@ Luokka noudattaa [Repository](https://en.wikipedia.org/wiki/Data_access_object) 
 
 ### Tiedostot
 
-Sovellus tallettaa käyttäjien tiedot erillisiin tiedostoihin.
+Sovellus tallettaa käyttäjien tiedot erilliseen tiedostoon.
 
-Sovelluksen juureen sijoitettu [konfiguraatiotiedosto](./kayttoohje.md#konfiguraatiotiedosto) [.env](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/data/.env) määrittelee tiedostojen nimet.
+Sovelluksen juureen sijoitettu [konfiguraatiotiedosto](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md#konfigurointi) [.env](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/data/.env) määrittelee tiedoston nimen.
 
 Käyttäjät tallennetaan SQLite-tietokannan tauluun `users`, joka alustetaan [initialize_database.py](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/initialize_database.py)-tiedostossa.
 
@@ -70,12 +70,8 @@ Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](https://github.com/mha
 
 ![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio.jpg)
 
-Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](../src/gui/main_view.py#L90) kutsuu aluksi käyttöliittymästä metodia [transpose_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L165), joka kutsuu samassa luokassa olevaa metodia [get_values_from_matrix a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L288). Tämän jälkeen lähetetään sovelluslogiikalle metodin [return_values_to_service_a(matrix)](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L10) avulla äsken haetun matriisin arvo ja kutsutaan metodia [transpose_matrix_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L18). Sovelluslogiikassa tehdään laskutoimitus ja palautetaan tulos [transpose_matrix_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L19). Tämän jälkeen main_view.py metodi [show_results(matrix)](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L311) näyttää tuloksen.
+Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](../src/gui/main_view.py#L90) kutsuu aluksi käyttöliittymästä metodia [transpose_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L218), joka kutsuu samassa luokassa olevaa metodia [get_values_from_matrix a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L384). Tämän jälkeen lähetetään sovelluslogiikalle metodin [return_values_to_service_a(matrix)](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L12) avulla äsken haetun matriisin arvo ja kutsutaan metodia [transpose_matrix_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L36). Sovelluslogiikassa tehdään laskutoimitus ja palautetaan tulos [transpose_matrix_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L42). Tämän jälkeen main_view.py metodi [show_results(matrix)](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L430) näyttää tuloksen.
 
 ### Muut toiminnallisuudet
 
-Sama periaate toistoo sovelluksen kaikissa toiminnallisuuksissa, käyttöliittymän tapahtumakäsittelijä kutsuu sopivaa sovelluslogiikan metodia, sovelluslogiikka päivittää kirjautuneen käyttäjän tilaa. Kontrollin palatessa käyttäliittymään, päivitetään tarvittaessa todojen lista sekä aktiivinen näkymä.
-
-## Ohjelman rakenteeseen jääneet heikkoudet
-
-### Käyttöliittymä
+Sama periaate toistuu sovelluksen kaikissa laskutoiminnallisuuksissa, käyttöliittymän tapahtumakäsittelijä kutsuu sopivaa sovelluslogiikan metodia, sovelluslogiikka laskee tuloksen ja palauttaa käyttöliittymään.

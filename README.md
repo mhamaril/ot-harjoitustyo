@@ -20,13 +20,19 @@ Sovelluksen toiminta on testattu Python-versiolla `3.9.0`. Etenkin vanhempien Py
 
 ## Asennus
 
-1. Asenna riippuvuudet komennolla:
+1. Asenna riippuvuut komennolla:
 
 ```bash
 python3 -m pipenv install
 ```
 
-2. Käynnistä sovellus komennolla:
+2. Suorita vaadittavat alustustoimenpiteet komennolla:
+
+```bash
+python3 -m pipenv run build
+```
+
+3. Käynnistä sovellus komennolla:
 
 ```bash
 python3 -m pipenv run start

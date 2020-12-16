@@ -15,42 +15,37 @@ class UsernameExists(Exception):
 
 
 class UserService:
-    """Sovelluslogiikasta vastaa luokka.
+    """Class responsible of user services
 
     Attributes:
-        user: User-olio, joka kuvaa soovellukseen kirjautunutta käyttäjää.
-        todo_repository: Olio, jolla on TodoRepository-luokkaa vastaavat metodit.
-        user_repository: Olio, jolla on UserRepository-luokkaa vastaavat metodit.
+        user: User-object, that represents logged user
+        user_repository: Object that has methods of UserRepository class
     """
 
     def __init__(
         self,
         user_repository=default_user_repository
     ):
-        """Luokan konstruktori. Luo uuden sovelluslogiikasta vastaavan palvelun.
+        """Constructor of the Class. Creates a service responsible of user logic
 
         Args:
-            todo_repository:
-                Vapaaehtoinen, oletusarvoltaan TodoRepository-olio.
-                Olio, jolla on TodoRepository-luokkaa vastaavat metodit.
             user_repository:
-                Vapaaehtoinen, oletusarvoltaan UserRepository-olio.
-                Olio, jolla on UserRepository-luokkaa vastaavat metodit.
+                Object that has methods of UserRepository class
         """
         self.user = None
         self.user_repository = user_repository
 
     def login(self, username, password):
-        """Kirjaa käyttäjän sisään.
+        """Logs user in.
 
         Args:
-            username: Merkkijonoarvo, joka kuvaa kirjautuvan käyttäjän käyttäjätunnusta.
-            password: Merkkijonoarvo, joka kuvaa kirjautuvan käyttäjän salasanaa.
+            username (str): Username of the user
+            password (str): Password of the user
         Returns:
-            Kirjautunut käyttäjä User-olion muodossa.
+            Logged user as a User-object
         Raises:
             InvalidCredentials:
-                Virhe, joka tapahtuu, kun käyttäjätunnus ja salasana eivät täsmää.
+                Raises exception if username and password don't match
         """
 
         user = self.user_repository.find_by_username(username)
@@ -63,41 +58,42 @@ class UserService:
         return user
 
     def get_current_user(self):
-        """Paluttaa kirjautuunen käyttäjän.
+        """Returns logged user
 
         Returns:
-            Kirjautunut käyttäjä User-olion muodossa.
+            Logged user as User object
         """
         return self.user
 
     def get_users(self):
-        """Palauttaa kaikki käyttäjät.
+        """Returns all users
 
         Returns:
-            User-oliota sisältä lista kaikista käyttäjistä.
+            List of all users 
         """
         return self.user_repository.find_all()
 
     def logout(self):
-        """Kirjaa nykyisen käyttäjän ulos.
+        """Logs out current user
         """
         self.user = None
 
     def create_user(self, username, password, login=True):
-        """Luo uuden käyttäjän ja tarvittaessa kirjaa sen sisään.
+        """Creates new user and logs the user in if login is set True
 
         Args:
-            username: Merkkijonoarvo, joka kuvastaa käyttäjän käyttäjätunnusta.
-            password: Merkkijonoarvo, joka kuvastaa käyttäjän salasanaa.
+            username (str): Username of the user
+            password (str): Password of the user
             login:
-                Vapaahtoinen, oletusarvo True.
-                Boolean-arvo, joka kertoo kirjataanko käyttäjä sisään onnistuneen luonnin jälkeen.
+                Voluntary, default True.
+                Boolean-value, that tells if the user logs in after succesfull creation
+                of a new user
 
         Raises:
-            UsernameExists: Virhe, joka tapahtuu, kun käyttäjätunnus on jo käytössä.
+            UsernameExists: Raises exception if username is already taken
 
         Returns:
-            Luotu käyttäjä User-olion muodossa.
+            New user as User-object
         """
 
         existing_user = self.user_repository.find_by_username(username)

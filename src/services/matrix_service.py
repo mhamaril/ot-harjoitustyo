@@ -1,7 +1,7 @@
 import numpy as np
 
 class MatrixService:
-    """Class responsible of services
+    """Class responsible of matrix calculation services
     """
     def __init__(self):
         self.matrix_a = []

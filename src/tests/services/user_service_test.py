@@ -88,3 +88,23 @@ class TestUserService(unittest.TestCase):
             UsernameExists,
             lambda: self.user_service.create_user(username, 'random')
         )
+    
+    def test_logout(self):
+        self.user_service.create_user(
+            self.user_kalle.username,
+            self.user_kalle.password
+        )
+
+        user = self.user_service.login(
+            self.user_kalle.username,
+            self.user_kalle.password
+        )
+
+        self.assertEqual(user.username, self.user_kalle.username)
+
+        self.user_service.logout()
+
+        self.assertEqual(self.user_service.get_current_user(), None)
+
+
+

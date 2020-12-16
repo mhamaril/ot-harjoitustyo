@@ -47,7 +47,7 @@ class CreateUserView:
     def initialize_password_field(self):
         password_label = ttk.Label(master=self.frame, text='Password')
 
-        self.password_entry = ttk.Entry(master=self.frame)
+        self.password_entry = ttk.Entry(master=self.frame, show="*")
 
         password_label.grid(padx=5, pady=5, sticky=constants.W)
         self.password_entry.grid(padx=5, pady=5, sticky=constants.EW)

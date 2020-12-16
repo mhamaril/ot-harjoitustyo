@@ -17,4 +17,5 @@
 | 12.12.| 2    | tietokannan luomista            |
 | 13.12.| 3    | tietokannan asennusta           |
 | 14.12.| 4    | sovelluksen viimeistelyä        |
-| yht   | 43   |                                 | 
+| 15.12.| 3    | docstring muokkaamista          |
+| yht   | 46   |                                 | 

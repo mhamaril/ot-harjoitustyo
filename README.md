@@ -1,6 +1,6 @@
 # Matriisilaskin
 
-Sovelluksen avulla voi tehdä matriisien välisiä laskutoimituksia. Tällä hetkellä sillä voi laskea neliömatriiseilla, joiden sivun pituus on kahdesta seitsemään. Pyrin jatkokehittämään sovellusta niin että sillä pystyy laskemaan n x m kokoisilla matriiseilla kun n,m < 8. 
+Sovelluksen avulla voi tehdä matriisien välisiä laskutoimituksia. Kirjautuneena sillä voi laskea kahdella neliömatriisilla, joiden sivun pituus on kahdesta seitsemään. Kirjautumattomassa versiossa voi laskea ainoastaan yhdellä 3x3-kokoisella matriisilla.
 
 ## Huomio Python-versiosta
 

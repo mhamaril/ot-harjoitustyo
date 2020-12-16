@@ -19,7 +19,7 @@ Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakatta
 
 ![](./kuvat/testikattavuus.png)
 XXXXXXXXXXXXXx
-Testaamatta jäivät _build.py_- ja _initialize\_database.py_-tiedostojen suorittaminen komentoriviltä. Nämä olisi myös voinut jättää testikattavuuden ulkopuolelle. Lisäksi testaatamatta jäivät mm. tilanteet, joissa haetaan kirjautumattoman käyttäjän tekemättömät tehtävät ja uloskirjautuminen.
+Testaamatta jäivät _build.py_- ja _initialize\_database.py_-tiedostojen suorittaminen komentoriviltä. Nämä olisi myös voinut jättää testikattavuuden ulkopuolelle.
 
 ## Järjestelmätestaus
 
@@ -34,7 +34,7 @@ Sovellusta on testattu sekä tilanteissa, joissa käyttäjät tallettava tiedost
 ### Toiminnallisuudet
 TARKISTA
 
-Kaikki [määrittelydokumentin](./vaatimusmaarittely.md#perusversion-tarjoama-toiminnallisuus) ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi. Kaikkien toiminnallisuuksien yhteydessä on syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä.
+Kaikki [määrittelydokumentin](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/Vaativuusmaarittely.md#kirjautuneen-k%C3%A4ytt%C3%A4j%C3%A4n-version-tarjoama-toiminnallisuus) ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi. Kaikkien toiminnallisuuksien yhteydessä on syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä.
 
 ## Sovellukseen jääneet laatuongelmat
 TARKISTA

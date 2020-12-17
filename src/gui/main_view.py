@@ -130,13 +130,13 @@ class MainView:
         button_multiply_by_a = Button(
             master=self.frame, text="Multiply by", width=17, command=self.multiply_by_a)
         button_multiply_by_a.grid(row=10, column=0, columnspan=2)
-        self.m_b_a = Entry(master=self.frame, width=9, borderwidth=5)
-        self.m_b_a.grid(row=10, column=2)
+        self.mul_by_a = Entry(master=self.frame, width=9, borderwidth=5)
+        self.mul_by_a.grid(row=10, column=2)
         button_power_of_a = Button(
             master=self.frame, text="Raise to power of", width=17, command=self.power_of_a)
         button_power_of_a.grid(row=11, column=0, columnspan=2)
-        self.p_o_a = Entry(master=self.frame, width=9, borderwidth=5)
-        self.p_o_a.grid(row=11, column=2)
+        self.pow_of_a = Entry(master=self.frame, width=9, borderwidth=5)
+        self.pow_of_a.grid(row=11, column=2)
 
         button_clear_a = Button(
             master=self.frame, text="Clear", width=7, command=self.clear_a)
@@ -166,13 +166,13 @@ class MainView:
         button_multiply_by_b = Button(
             master=self.frame, text="Multiply by", width=17, command=self.multiply_by_b)
         button_multiply_by_b.grid(row=10, column=8, columnspan=2)
-        self.m_b_b = Entry(master=self.frame, width=9, borderwidth=5)
-        self.m_b_b.grid(row=10, column=10)
+        self.mul_by_b = Entry(master=self.frame, width=9, borderwidth=5)
+        self.mul_by_b.grid(row=10, column=10)
         button_power_of_b = Button(
             master=self.frame, text="Raise to power of", width=17, command=self.power_of_b)
         button_power_of_b.grid(row=11, column=8, columnspan=2)
-        self.p_o_b = Entry(master=self.frame, width=9, borderwidth=5)
-        self.p_o_b.grid(row=11, column=10)
+        self.pow_of_b = Entry(master=self.frame, width=9, borderwidth=5)
+        self.pow_of_b.grid(row=11, column=10)
 
         button_clear_b = Button(
             master=self.frame, text="Clear", width=7, command=self.clear_b)
@@ -187,7 +187,7 @@ class MainView:
         button_size_down_matrix_b.grid(row=8, column=10)
 
     def create_other_buttons(self):
-        """Creates rest of the buttons
+        """Creates the rest of the buttons
         """
         button_axb = Button(master=self.frame, text="A x B", width=7,
                             command=self.axb)
@@ -274,7 +274,7 @@ class MainView:
         self.matrix_service.return_values_to_service_a(matrix)
         try:
             self.result_values = self.matrix_service.multiply_matrix_a_by(
-                float(self.m_b_a.get()))
+                float(self.mul_by_a.get()))
             self.show_results()
         except ValueError:
             messagebox.showerror("Wrong Input", f"Check Multiplier Matrix ")
@@ -287,7 +287,7 @@ class MainView:
         self.matrix_service.return_values_to_service_b(matrix)
         try:
             self.result_values = self.matrix_service.multiply_matrix_b_by(
-                float(self.m_b_b.get()))
+                float(self.mul_by_b.get()))
             self.show_results()
         except ValueError:
             messagebox.showerror("Wrong Input", f"Check Multiplier Matrix B")
@@ -300,7 +300,7 @@ class MainView:
         self.matrix_service.return_values_to_service_a(matrix)
         try:
             self.result_values = self.matrix_service.power_of_matrix_a(
-                int(self.p_o_a.get()))
+                int(self.pow_of_a.get()))
             self.show_results()
         except ValueError:
             messagebox.showerror("Wrong Input", f"Check Exponent Matrix A")
@@ -313,7 +313,7 @@ class MainView:
         self.matrix_service.return_values_to_service_b(matrix)
         try:
             self.result_values = self.matrix_service.power_of_matrix_b(
-                int(self.p_o_b.get()))
+                int(self.pow_of_b.get()))
             self.show_results()
         except ValueError:
             messagebox.showerror("Wrong Input", f"Check Exponent Matrix B")

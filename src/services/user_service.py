@@ -69,7 +69,7 @@ class UserService:
         """Returns all users
 
         Returns:
-            List of all users 
+            List of all users
         """
         return self.user_repository.find_all()
 

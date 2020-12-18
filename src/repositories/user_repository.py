@@ -10,7 +10,7 @@ class UserRepository:
     """Class resposible of user data
     """
     def __init__(self, connection):
-        """Constructor of the Class. 
+        """Constructor of the Class.
 
         Args:
             connection (sqlite3): Sqlite3 dtabase connection

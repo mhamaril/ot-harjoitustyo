@@ -4,6 +4,8 @@ from gui.main_view import MainView
 
 
 class GUI:
+    """Class responsible of graphic user interface
+    """
     def __init__(self, root):
         self.root = root
         self.current_view = None

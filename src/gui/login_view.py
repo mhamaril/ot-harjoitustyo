@@ -3,6 +3,8 @@ from services.user_service import user_service, InvalidCredentials
 
 
 class LoginView:
+    """Class responsible of creating login view
+    """
     def __init__(self, root, handle_login, handle_show_create_user_view,
         handle_show_limited_view):
         self.root = root

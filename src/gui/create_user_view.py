@@ -3,7 +3,10 @@ from services.user_service import user_service, UsernameExists
 
 
 class CreateUserView:
+    """Class responsible of creating create new user view
+    """
     def __init__(self, root, handle_create_user, handle_show_login_view):
+        
         self.root = root
         self.handle_create_user = handle_create_user
         self.handle_show_login_view = handle_show_login_view

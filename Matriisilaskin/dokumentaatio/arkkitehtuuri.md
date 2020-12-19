@@ -4,7 +4,7 @@
 
 Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
 
-![Pakkausrakenne](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/pakkausrakenne.jpg)
+![Pakkausrakenne](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/pakkausrakenne.jpg)
 
 Pakkaus _gui_ sisältää käyttöliittymästä, _services_ sovelluslogiikasta ja _repositories_ tietojen pysyväistallennuksesta vastaavan koodin. Pakkaus _entities_ sisältää luokan, joka kuvastaa sovelluksen käyttämiä tietokohteita.
 
@@ -37,7 +37,7 @@ _UserService_ pääsee käsiksi käyttäjiin tietojen tallennuksesta vastaavan p
 
 Ohjelman luokkakaavio on seuraavanlainen:
 
-![Luokkakaavio](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/luokka_pakkauskaavio.jpg)
+![Luokkakaavio](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luokka_pakkauskaavio.jpg)
 
 ## Tietojen pysyväistallennus
 
@@ -62,13 +62,13 @@ Kuvataan seuraavaksi sovelluksen toimintalogiikka kahden päätoiminnallisuuden 
 
 Kun kirjautumisnäkymän syötekenttiin kirjoitetetataan käyttäjätunnus ja salasana, jonka jälkeen klikataan painiketta _Login_, etenee sovelluksen kontrolli seuraavasti:
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio_kirjautuminen.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio_kirjautuminen.jpg)
 
 Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/login_view.py#L19) kutsuu sovelluslogiikan `UserService` metodia [login](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/user_service.py#L43) antaen parametriksi käyttäjätunnuksen ja salasanan. Sovelluslogiikka selvittää `UserRepository`:n avulla onko käyttäjätunnus olemassa. Jos on, tarkastetaan täsmääkö salasanat. Jos salasanat täsmäävät, kirjautuminen onnistuu. Tämän seurauksena käyttöliittymä vaihtaa näkymäksi rajoittamattoman `MainView`:n, eli sovelluksen varsinaisen päänäkymän.
 
 ### Syötteiden kirjaaminen sekä laskutoimitus
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio.jpg)
 
 Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](../src/gui/main_view.py#L90) kutsuu aluksi käyttöliittymästä metodia [transpose_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L218), joka kutsuu samassa luokassa olevaa metodia [get_values_from_matrix a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L384). Tämän jälkeen lähetetään sovelluslogiikalle metodin [return_values_to_service_a(matrix)](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L12) avulla äsken haetun matriisin arvo ja kutsutaan metodia [transpose_matrix_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L36). Sovelluslogiikassa tehdään laskutoimitus ja palautetaan tulos [transpose_matrix_a](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/services/matrix_service.py#L42). Tämän jälkeen main_view.py metodi [show_results(matrix)](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/gui/main_view.py#L430) näyttää tuloksen.
 

@@ -12,13 +12,13 @@ Sovellusta voi käyttää sekä kirjautuneena että kirjautumattomana käyttäj�
 
 Sovellus koostuu neljästä eri näkymästä: rajoitettu versio, kirjautuminen, käyttäjän luonti ja täysversio.
 ### Rajoitettu versio
-![Aloitusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/aloitusn%C3%A4kym%C3%A4.jpg)
+![Aloitusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/aloitusn%C3%A4kym%C3%A4.jpg)
 ### Kirjautuminen
-![Kirjautumisnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kirjautumisn%C3%A4kym%C3%A4.jpg)
+![Kirjautumisnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kirjautumisn%C3%A4kym%C3%A4.jpg)
 ### Käyttäjän luonti 
-![Käyttäjänluontinäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/luok%C3%A4ytt%C3%A4j%C3%A4n%C3%A4kym%C3%A4.jpg)
+![Käyttäjänluontinäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luok%C3%A4ytt%C3%A4j%C3%A4n%C3%A4kym%C3%A4.jpg)
 ### Täysversio
-![Täysversionäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/fullversionn%C3%A4kym%C3%A4.jpg)
+![Täysversionäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/fullversionn%C3%A4kym%C3%A4.jpg)
 
 ## Kirjautumattoman käyttäjän version tarjoama toiminnallisuus
 

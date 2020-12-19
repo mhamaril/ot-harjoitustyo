@@ -1,6 +1,5 @@
 import unittest
 import numpy as np
-from tkinter import Tk
 
 from services.matrix_service import MatrixService
 
@@ -22,11 +21,19 @@ class TestMatrixService(unittest.TestCase):
         self.assertTrue(
             (result == np.array([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])).all())
 
+    def test_return_faulty_values_to_service_a(self):
+        result = self.matrix_service.return_values_to_service_a([[]])
+        self.assertTrue((result == np.array([[]])).all())
+
     def test_return_values_to_service_b(self):
         result = self.matrix_service.return_values_to_service_b(
             [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])
         self.assertTrue(
             (result == np.array([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])).all())
+
+    def test_return_faulty_values_to_service_b(self):
+        result = self.matrix_service.return_values_to_service_b([[]])
+        self.assertTrue((result == np.array([[]])).all())
 
     def test_axb_works_correctly(self):
         result = self.matrix_service.a_mul_b()
@@ -43,12 +50,12 @@ class TestMatrixService(unittest.TestCase):
         self.assertTrue((result == np.array(
             [[-8.0, -6.0, -4.0], [-2.0, 0.0, 2.0], [4.0, 6.0, 8.0]])).all())
 
-    def test_multiply_by_matrix_A_works_correctly(self):
+    def test_multiply_by_matrix_a_works_correctly(self):
         result = self.matrix_service.multiply_matrix_a_by(self.multiplier)
         self.assertTrue((result == np.array(
             [[2.0, 4.0, 6.0], [8.0, 10.0, 12.0], [14.0, 16.0, 18.0]])).all())
 
-    def test_multiply_by_matrix_B_works_correctly(self):
+    def test_multiply_by_matrix_b_works_correctly(self):
         result = self.matrix_service.multiply_matrix_b_by(self.multiplier)
         self.assertTrue((result == np.array(
             [[18.0, 16.0, 14.0], [12.0, 10.0, 8.0], [6.0, 4.0, 2.0]])).all())
@@ -91,25 +98,28 @@ class TestMatrixService(unittest.TestCase):
             [[1.0, 2.0, 1.0], [2.0, 1.0, 2.0], [1.0, 1.0, 2.0]])
         result = self.matrix_service.inverse_matrix_a()
         self.assertTrue((result == np.array(
-            [[0.0, 1.0, -1.0], [float(2/3), float(-1/3), 0.0], 
-            [float(-1/3), float(-1/3), 1.0]])).any())
+            [[0.0, 1.0, -1.0], [float(2/3), float(-1/3), 0.0],
+             [float(-1/3), float(-1/3), 1.0]])).any())
 
     def test_inverse_matrix_b(self):
         self.matrix_service.matrix_b = np.array(
             [[1.0, 2.0, 1.0], [2.0, 1.0, 2.0], [1.0, 1.0, 2.0]])
         result = self.matrix_service.inverse_matrix_b()
         self.assertTrue((result == np.array(
-            [[0.0, 1.0, -1.0], [float(2/3), float(-1/3), 0.0], 
-            [float(-1/3), float(-1/3), 1.0]])).any())
-    
+            [[0.0, 1.0, -1.0], [float(2/3), float(-1/3), 0.0],
+             [float(-1/3), float(-1/3), 1.0]])).any())
+
     def test_matrix_a_not_invertible(self):
         result = self.matrix_service.inverse_matrix_a()
         self.assertRaises(np.linalg.LinAlgError)
         self.assertEqual(result, [])
-    
+
     def test_matrix_b_not_invertible(self):
         result = self.matrix_service.inverse_matrix_a()
         self.assertRaises(np.linalg.LinAlgError)
         self.assertEqual(result, [])
-    
 
+    def test_determinant_a_with_faulty_input(self):
+        self.matrix_service.matrix_a = np.array([[]])
+        result = self.matrix_service.determinant_matrix_a()
+        self.assertEqual(result, None)

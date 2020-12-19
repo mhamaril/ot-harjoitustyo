@@ -19,6 +19,7 @@ class MatrixService:
             np.array: Numpy array list
         """
         self.matrix_a = np.array(matrix_a)
+
         return self.matrix_a
 
     def return_values_to_service_b(self, matrix_b):
@@ -31,6 +32,7 @@ class MatrixService:
             np.array: Numpy array list
         """
         self.matrix_b = np.array(matrix_b)
+        
         return self.matrix_b
 
     def transpose_matrix_a(self):
@@ -55,7 +57,13 @@ class MatrixService:
         Returns:
             float: Float number
         """
-        return np.linalg.det(self.matrix_a)
+        try:
+            result = np.linalg.det(self.matrix_a)
+            return result
+        
+        except np.linalg.LinAlgError:
+            return None
+        
 
     def determinant_matrix_b(self):
         """Calculates determinant of matrix B and returns result

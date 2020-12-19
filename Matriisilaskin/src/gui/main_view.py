@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import warnings
 
 from services.matrix_service import MatrixService
 from services.user_service import user_service
@@ -113,7 +114,7 @@ class MainView:
                 row.append(temp)
             self.result.append(row)
         return self.result
-    
+
     def create_buttons_for_matrix_a(self):
         """Creates buttons for Matrix A
         """
@@ -141,7 +142,7 @@ class MainView:
         button_clear_a = Button(
             master=self.frame, text="Clear", width=7, command=self.clear_a)
         button_clear_a.grid(row=8, column=0)
-    
+
     def create_size_buttons_for_matrix_a(self):
         button_size_up_matrix_a = Button(
             master=self.frame, text="+", width=7, command=self.size_up)
@@ -207,9 +208,10 @@ class MainView:
         button_insert_in_b = Button(
             master=self.frame, text="Insert in B", width=17, command=self.insert_result_in_b)
         button_insert_in_b.grid(row=21, column=4, columnspan=2)
-        button_logout = Button(master=self.frame, text="Logout", width=17, command=self.handle_logout)
+        button_logout = Button(
+            master=self.frame, text="Logout", width=17, command=self.handle_logout)
         button_logout.grid(row=21, column=0, columnspan=2)
-    
+
     def create_full_version_button(self):
         button_log_in = Button(
             master=self.frame, text="Full Version", width=17, command=self.handle_show_login_view)
@@ -247,8 +249,8 @@ class MainView:
            in result matrix
         """
         matrix = self.get_values_from_matrix_b()
-        self.matrix_service.return_values_to_service_b(matrix)
-        self.show_det(self.matrix_service.determinant_matrix_b())
+        det = self.matrix_service.return_values_to_service_b(matrix)
+        self.show_det(det)
 
     def inverse_a(self):
         """Calls matrix_service for matrix calculation and show result
@@ -382,14 +384,14 @@ class MainView:
                 self.matrix_b[i][j].insert(0, float(self.result_values[i][j]))
 
     def get_values_from_matrix_a(self):
-        """Get values from the Entries in Matrix A and returns 
+        """Get values from the Entries in Matrix A and returns
            them as a list of floats
 
         Returns:
             list: List of floats
         """
         self.matrix_a_values = []
-        i = j = 0
+        i = j = k = 0
         for value in self.matrix_a:
             row = []
             i += 1
@@ -398,10 +400,14 @@ class MainView:
                 try:
                     row.append(float(x.get()))
                 except ValueError:
+                    k += 1
                     messagebox.showerror(
                         "Wrong Input", f"Check Input in Matrix A Row {i} Column {j}")
             j = 0
             self.matrix_a_values.append(row)
+        if k > 0:
+            self.matrix_a_values = [[]]
+            return self.matrix_a_values
         return self.matrix_a_values
 
     def get_values_from_matrix_b(self):
@@ -412,7 +418,7 @@ class MainView:
             list: List of floats
         """
         self.matrix_b_values = []
-        i = j = 0
+        i = j = k = 0
         for value in self.matrix_b:
             row = []
             i += 1
@@ -421,10 +427,14 @@ class MainView:
                 try:
                     row.append(float(x.get()))
                 except ValueError:
+                    k += 1
                     messagebox.showerror(
                         "Wrong Input", f"Check Input in Matrix B Row {i} Column {j}")
             j = 0
             self.matrix_b_values.append(row)
+        if k > 0:
+            self.matrix_b_values = [[]]
+            return self.matrix_b_values
         return self.matrix_b_values
 
     def show_results(self):
@@ -433,7 +443,11 @@ class MainView:
         self.reset_results()
         for i in range(self.size):
             for j in range(self.size):
-                self.result[i][j].insert(0, float(self.result_values[i][j]))
+                if len(self.result[i]) == self.size:
+                    try:
+                        self.result[i][j].insert(0, float(self.result_values[i][j]))
+                    except IndexError:
+                        pass
 
     def show_det(self, det):
         """Shows determinant in result matrix
@@ -442,7 +456,13 @@ class MainView:
             det (float): Value of determinant
         """
         self.reset_results()
-        self.result[1][1].insert(0, float(det))
+        if det is None:
+            pass
+        else:
+            try:
+                self.result[1][1].insert(0, float(det))
+            except TypeError:
+                pass
 
     def show_inv(self, inv):
         """Show inverse matrix if possible else shows "Not Invertible" text

@@ -18,4 +18,5 @@
 | 13.12.| 3    | tietokannan asennusta           |
 | 14.12.| 4    | sovelluksen viimeistelyä        |
 | 15.12.| 3    | docstring muokkaamista          |
-| yht   | 46   |                                 | 
+| 18.12.| 4    | virheellisten syötteiden tarkistus  |
+| yht   | 50   |                                 | 

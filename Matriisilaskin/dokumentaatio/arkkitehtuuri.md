@@ -49,7 +49,7 @@ Luokka noudattaa [Repository](https://en.wikipedia.org/wiki/Data_access_object) 
 
 Sovellus tallettaa käyttäjien tiedot erilliseen tiedostoon.
 
-Sovelluksen juureen sijoitettu [konfiguraatiotiedosto](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kayttoohje.md#konfigurointi) [.env](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/src/data/.env) määrittelee tiedoston nimen.
+Sovelluksen juureen sijoitettu [konfiguraatiotiedosto](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kayttoohje.md#konfigurointi) [.env](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/data/.env) määrittelee tiedoston nimen.
 
 Käyttäjät tallennetaan SQLite-tietokannan tauluun `users`, joka alustetaan [initialize_database.py](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/src/initialize_database.py)-tiedostossa.
 

@@ -10,6 +10,8 @@ Sovelluksen toiminta on testattu Python-versiolla `3.9.0`. Etenkin vanhempien Py
 
 [Toinen release](https://github.com/mhamaril/ot-harjoitustyo/releases/tag/viikko6)
 
+[Ensimmäinen release](https://github.com/mhamaril/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Dokumentaatio
 
 [Käyttöohje](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kayttoohje.md)

@@ -14,9 +14,9 @@ Repositorio-luokkaa `UserRepository` testataan ainoastaan testeissä käytössä
 
 ### Testauskattavuus
 
-Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakattavuus on 93 %
+Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakattavuus on 90 %
 
-![](./kuvat/Coverage-report.png)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/Coverage-report.png)
 
 ## Järjestelmätestaus
 

@@ -32,7 +32,7 @@ class MatrixService:
             np.array: Numpy array list
         """
         self.matrix_b = np.array(matrix_b)
-        
+
         return self.matrix_b
 
     def transpose_matrix_a(self):
@@ -52,7 +52,8 @@ class MatrixService:
         return self.matrix_b.transpose()
 
     def determinant_matrix_a(self):
-        """Calculates determinant of matrix A and returns result
+        """Calculates determinant of matrix A and returns result or None if input is
+           invalid
 
         Returns:
             float: Float number
@@ -60,18 +61,23 @@ class MatrixService:
         try:
             result = np.linalg.det(self.matrix_a)
             return result
-        
+
         except np.linalg.LinAlgError:
             return None
-        
 
     def determinant_matrix_b(self):
-        """Calculates determinant of matrix B and returns result
+        """Calculates determinant of matrix B and returns result or None if input is
+           invalid
 
         Returns:
             float: Float number
         """
-        return np.linalg.det(self.matrix_b)
+        try:
+            result = np.linalg.det(self.matrix_b)
+            return result
+
+        except np.linalg.LinAlgError:
+            return None
 
     def inverse_matrix_a(self):
         """Calculates and returns inverse of matrix A if possible else returns

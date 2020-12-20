@@ -20,7 +20,7 @@ Jokainen näistä toteutetaan omana luokkanaan. Näkymistä yksi on aina kerrall
 
 ## Sovelluslogiikka
 
-Laskentaan liittyvistä kokonaisuuksista vastaa luokka [MatrixService](../src/services/matrix_service.py) joka on ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä ovat esimerkiksi:
+Laskentaan liittyvistä kokonaisuuksista vastaa luokka [MatrixService](../src/services/matrix_service.py) joka on ainoa olio. Luokka tarjoaa kaikille käyttöliittymän toiminnoille oman metodin. Näitä ovat esimerkiksi:
 
 - `transpose_matrix_a()`
 - `determinant_matrix_a()`
@@ -49,7 +49,7 @@ Luokka noudattaa [Repository](https://en.wikipedia.org/wiki/Data_access_object) 
 
 Sovellus tallettaa käyttäjien tiedot erilliseen tiedostoon.
 
-Sovelluksen juureen sijoitettu [konfiguraatiotiedosto](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kayttoohje.md#konfigurointi) [.env](https://github.com/mhamaril/ot-harjoitustyo/blob/master/src/data/.env) määrittelee tiedoston nimen.
+Sovelluksen juureen sijoitettu [konfiguraatiotiedosto](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kayttoohje.md#konfigurointi) [.env](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/src/data/.env) määrittelee tiedoston nimen.
 
 Käyttäjät tallennetaan SQLite-tietokannan tauluun `users`, joka alustetaan [initialize_database.py](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/src/initialize_database.py)-tiedostossa.
 

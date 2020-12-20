@@ -249,7 +249,8 @@ class MainView:
            in result matrix
         """
         matrix = self.get_values_from_matrix_b()
-        det = self.matrix_service.return_values_to_service_b(matrix)
+        self.matrix_service.return_values_to_service_b(matrix)
+        det = self.matrix_service.determinant_matrix_b()
         self.show_det(det)
 
     def inverse_a(self):

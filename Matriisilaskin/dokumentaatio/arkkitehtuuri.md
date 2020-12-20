@@ -62,7 +62,7 @@ Kuvataan seuraavaksi sovelluksen toimintalogiikka kahden päätoiminnallisuuden 
 
 Kun kirjautumisnäkymän syötekenttiin kirjoitetetataan käyttäjätunnus ja salasana, jonka jälkeen klikataan painiketta _Login_, etenee sovelluksen kontrolli seuraavasti:
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio_kirjautuminen.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/sekvenssikaavio_kirjautuminen.jpg)
 
 Painikkeen painamiseen reagoiva [tapahtumankäsittelijä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/src/gui/login_view.py#L19) kutsuu sovelluslogiikan `UserService` metodia [login](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/src/services/user_service.py#L43) antaen parametriksi käyttäjätunnuksen ja salasanan. Sovelluslogiikka selvittää `UserRepository`:n avulla onko käyttäjätunnus olemassa. Jos on, tarkastetaan täsmääkö salasanat. Jos salasanat täsmäävät, kirjautuminen onnistuu. Tämän seurauksena käyttöliittymä vaihtaa näkymäksi rajoittamattoman `MainView`:n, eli sovelluksen varsinaisen päänäkymän.
 

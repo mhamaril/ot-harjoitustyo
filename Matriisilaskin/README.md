@@ -12,9 +12,13 @@ Sovelluksen toiminta on testattu Python-versiolla `3.9.0`. Etenkin vanhempien Py
 
 ## Dokumentaatio
 
+[Käyttöohje](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kayttoohje.md)
+
 [Vaativuusmäärittely](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/Vaativuusmaarittely.md)
 
 [Arkkitehtuurikuvaus](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
+[Testausdokumentti](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/testaus.md)
 
 [Tuntikirjanpito](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 

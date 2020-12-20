@@ -12,13 +12,13 @@ Sovellusta voi käyttää sekä kirjautuneena että kirjautumattomana käyttäj�
 
 Sovellus koostuu neljästä eri näkymästä: rajoitettu versio, kirjautuminen, käyttäjän luonti ja täysversio.
 ### Rajoitettu versio
-![Aloitusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/aloitusn%C3%A4kym%C3%A4.jpg)
+![Aloitusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/aloitusnakyma.jpg)
 ### Kirjautuminen
-![Kirjautumisnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kirjautumisn%C3%A4kym%C3%A4.jpg)
+![Kirjautumisnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/kirjautumisnakyma.jpg)
 ### Käyttäjän luonti 
-![Käyttäjänluontinäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luok%C3%A4ytt%C3%A4j%C3%A4n%C3%A4kym%C3%A4.jpg)
+![Käyttäjänluontinäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/loukayttajanakyma.jpg)
 ### Täysversio
-![Täysversionäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/fullversionn%C3%A4kym%C3%A4.jpg)
+![Täysversionäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/fullversionnakyma.jpg)
 
 ## Kirjautumattoman käyttäjän version tarjoama toiminnallisuus
 
@@ -33,12 +33,12 @@ Sovellus koostuu neljästä eri näkymästä: rajoitettu versio, kirjautuminen, 
 
 ## Kirjautuneen käyttäjän version tarjoama toiminnallisuus
 
-- Käyttäjä voi luoda yhden tai kaksi neliö matriisia joiden sivun pituus voi vaihdella kahdesta seitsemään
+- Käyttäjä voi luoda yhden tai kaksi neliömatriisia, joiden sivun pituus voi vaihdella kahdesta seitsemään
 - Käyttäjä voi vaihtaa matriisien paikkoja keskenään
 - Käyttäjä voi tehdä luoduilla matriiseilla kerto-, yhteen- ja vähennyslaskuja 
 - Käyttäjä voi ottaa molemmista matriiseista determinantin, käänteismatriisin tai transpoosin
 - Käyttäjä voi kertoa matriisin luvulla tai korottaa matriisin kokonaisluvulla potenssiin
-- Käyttäjä voi tyhjätä matriisit "Clear"-napeilla
+- Käyttäjä voi tyhjentää matriisit "Clear"-napeilla
 - Saatu tulos näkyy sovelluksessa
 - Matriisin kokoa voi muuttaa + ja - napeista
 - Tuloksen voi siirtää matriisin A ja/tai B paikalle
@@ -51,5 +51,5 @@ Perusversion jälkeen sovellusta voisi kehittää esim. seuraavilla toiminnallis
 
 - Lisätään mahdollisuus tehdä erikokoisia matriiseja esim. 3x4 matriiseja
 - Lisätään mahdollisuus laskea yhtälöryhmillä eri laskutoimituksia, tämä lisäisi yhden näkymän lisää
-- Pyritään kasvattamaan suurimman sallitun matriisin kokoa
+- Kasvattamaan suurimman sallitun matriisin kokoa
 

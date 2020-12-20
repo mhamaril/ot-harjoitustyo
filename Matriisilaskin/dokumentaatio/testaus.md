@@ -13,13 +13,10 @@ Sovelluslogiikasta vastaavaa `UserService`-luokkaa testataan [TestUserService](h
 Repositorio-luokkaa `UserRepository` testataan ainoastaan testeissä käytössäolevilla tiedostoilla. Tiedostojen nimet on konfiguroitu _.env.test_-tiedostoon. `UserRepository`-luokkaa testataan [TestUserRepository](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/src/tests/repositories/user_repository_test.py)-testiluokalla.
 
 ### Testauskattavuus
-MUOKKAA
 
-Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakattavuus on XXX%
+Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakattavuus on 93 %
 
-![](./kuvat/testikattavuus.png)
-XXXXXXXXXXXXXx
-Testaamatta jäivät _build.py_- ja _initialize\_database.py_-tiedostojen suorittaminen komentoriviltä. Nämä olisi myös voinut jättää testikattavuuden ulkopuolelle.
+![](./kuvat/Coverage-report.png)
 
 ## Järjestelmätestaus
 
@@ -34,7 +31,7 @@ Sovellusta on testattu sekä tilanteissa, joissa käyttäjät tallettava tiedost
 ### Toiminnallisuudet
 TARKISTA
 
-Kaikki [määrittelydokumentin](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Vaativuusmaarittely.md#kirjautuneen-k%C3%A4ytt%C3%A4j%C3%A4n-version-tarjoama-toiminnallisuus) ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi. Kaikkien toiminnallisuuksien yhteydessä on syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä.
+Kaikki [määrittelydokumentin](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/Vaativuusmaarittely.md#kirjautuneen-k%C3%A4ytt%C3%A4j%C3%A4n-version-tarjoama-toiminnallisuus) ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi. Kaikkien toiminnallisuuksien yhteydessä on syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä.
 
 ## Sovellukseen jääneet laatuongelmat
 TARKISTA

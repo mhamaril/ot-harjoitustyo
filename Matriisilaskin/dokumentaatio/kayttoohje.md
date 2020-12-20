@@ -34,11 +34,11 @@ Sovellus käynnistyy rajoitettuun versioon, jossa on yksi 3x3 matriisi ja useita
 
 "Full Version"- painikkeesta pääsee kirjautumisnäkymään:
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kirjautumisn%C3%A4kym%C3%A4.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kirjautumisnakyma.jpg)
 
 Kirjautuminen onnistuu kirjoittamalla olemassa oleva käyttäjätunnus sekä oikea salasana syötekenttään ja painamalla "Login"- painiketta. Voi myös palata takaisin kirjautumatta "Limited Version"- painikkeesta.
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luok%C3%A4ytt%C3%A4j%C3%A4n%C3%A4kym%C3%A4.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luokayttajanakyma.jpg)
 
 ## Uuden käyttäjän luominen
 
@@ -46,24 +46,24 @@ Kirjautumisnäkymästä on mahdollista siirtyä uuden käyttäjän luomisnäkym�
 
 Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla "Create"-painiketta:
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luok%C3%A4ytt%C3%A4j%C3%A4n%C3%A4kym%C3%A4.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luokayttajanakyma.jpg)
 
 Jos käyttäjän luominen onnistuu, siirrytään täyden version näkymään.
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/fullversionn%C3%A4kym%C3%A4.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/fullversionnakyma.jpg)
 
 ## Matriisin koon muuttaminen
 
 Matriisin kokoa muutetaan + ja - painikkeista 2x2 matriisin ollessa pienin sallittu ja isoin mahdollinen on matriisi on 7x7.
 
-![Perusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/fullversionn%C3%A4kym%C3%A4.jpg)
+![Perusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/fullversionnakyma.jpg)
 
 
 ## Laskutoimitukset matriiseleilla
 
 Täytä matriisiin arvot ja paina haluttua laskutoimitusta esittävää painiketta. Tulos näytetään Result matriisissa.
 
-![Perustoiminnallisuus](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/laskutoimitusn%C3%A4kym%C3%A4.jpg)
+![Perustoiminnallisuus](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/laskutoimitusnakyma.jpg)
 
 ## Matriisien vaihtaminen
 

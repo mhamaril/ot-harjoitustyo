@@ -29,12 +29,10 @@ Sovellus on haettu ja sitä on testattu [käyttöohjeen](./kayttoohje.md) kuvaam
 Sovellusta on testattu sekä tilanteissa, joissa käyttäjät tallettava tiedosto on ollut olemassa ja jossa sitä ei ole ollut jolloin ohjelma on luonut sen itse.
 
 ### Toiminnallisuudet
-TARKISTA
 
 Kaikki [määrittelydokumentin](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/Vaativuusmaarittely.md#kirjautuneen-k%C3%A4ytt%C3%A4j%C3%A4n-version-tarjoama-toiminnallisuus) ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi. Kaikkien toiminnallisuuksien yhteydessä on syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä.
 
 ## Sovellukseen jääneet laatuongelmat
-TARKISTA
 
 Sovellus ei anna tällä hetkellä järkeviä virheilmoituksia, seuraavissa tilanteissa:
 

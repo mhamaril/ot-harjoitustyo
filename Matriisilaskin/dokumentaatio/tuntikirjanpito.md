@@ -19,4 +19,6 @@
 | 14.12.| 4    | sovelluksen viimeistelyä        |
 | 15.12.| 3    | docstring muokkaamista          |
 | 18.12.| 4    | virheellisten syötteiden tarkistus  |
-| yht   | 50   |                                 | 
+| 19.12.| 2    | Viimeistelyä                    |
+| 20.12.| 3    | Tiedostojen siirtelyä ja viimeistelyä |
+| yht   | 55   |                                 | 

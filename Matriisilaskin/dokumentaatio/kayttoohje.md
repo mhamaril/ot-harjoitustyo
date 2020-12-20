@@ -28,17 +28,17 @@ python3 -m pipenv run start
 
 Sovellus käynnistyy rajoitettuun versioon, jossa on yksi 3x3 matriisi ja useita painikkeita joilla voi suorittaa laskutoimituksia. Vasemmalla alhaalla on "Full Version"- painike, josta pääsee kirjautumaan tai rekisteröitymään rajoittamattomaan versioon.
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/aloitusn%C3%A4kym%C3%A4.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/aloitusnakyma.jpg)
 
 ## Kirjautuminen
 
 "Full Version"- painikkeesta pääsee kirjautumisnäkymään:
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kirjautumisnakyma.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/kirjautumisnakyma.jpg)
 
 Kirjautuminen onnistuu kirjoittamalla olemassa oleva käyttäjätunnus sekä oikea salasana syötekenttään ja painamalla "Login"- painiketta. Voi myös palata takaisin kirjautumatta "Limited Version"- painikkeesta.
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luokayttajanakyma.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/loukayttajanakyma.jpg)
 
 ## Uuden käyttäjän luominen
 
@@ -46,7 +46,7 @@ Kirjautumisnäkymästä on mahdollista siirtyä uuden käyttäjän luomisnäkym�
 
 Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla "Create"-painiketta:
 
-![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/luokayttajanakyma.jpg)
+![](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/loukayttajanakyma.jpg)
 
 Jos käyttäjän luominen onnistuu, siirrytään täyden version näkymään.
 
@@ -56,14 +56,14 @@ Jos käyttäjän luominen onnistuu, siirrytään täyden version näkymään.
 
 Matriisin kokoa muutetaan + ja - painikkeista 2x2 matriisin ollessa pienin sallittu ja isoin mahdollinen on matriisi on 7x7.
 
-![Perusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/fullversionnakyma.jpg)
+![Perusnäkymä](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/fullversionnakyma.jpg)
 
 
 ## Laskutoimitukset matriiseleilla
 
 Täytä matriisiin arvot ja paina haluttua laskutoimitusta esittävää painiketta. Tulos näytetään Result matriisissa.
 
-![Perustoiminnallisuus](https://github.com/mhamaril/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/laskutoimitusnakyma.jpg)
+![Perustoiminnallisuus](https://github.com/mhamaril/ot-harjoitustyo/blob/master/Matriisilaskin/dokumentaatio/kuvat/laskutoimitusnakyma.jpg)
 
 ## Matriisien vaihtaminen
 

@@ -151,27 +151,42 @@ class MatrixService:
         return multiplier*self.matrix_b
 
     def a_mul_b(self):
-        """Multiplies Matrix A with Matrix B and returns result
+        """Multiplies Matrix A with Matrix B and returns result if possible
+            else returns empty list
 
         Returns:
             np.array: Numpy array list
         """
-        return self.matrix_a @ self.matrix_b
+        try:
+            result = self.matrix_a @ self.matrix_b
+            return result
+        except ValueError:
+            return []
 
     def a_plus_b(self):
-        """Adds Matrix A with Matrix B and returns result
+        """Adds Matrix A with Matrix B and returns result if possible
+            else returns empty list
 
         Returns:
             np.array: Numpy array list
         """
-        return self.matrix_a + self.matrix_b
+        try:
+            result = self.matrix_a + self.matrix_b
+            return result
+        except ValueError:
+            return []
 
     def a_minus_b(self):
-        """Substracts Matrix B from Matrix A and return result
+        """Substracts Matrix B from Matrix A and return result if possible
+            else returns empty list
 
         Returns:
             np.array: Numpy array list
         """
-        return self.matrix_a - self.matrix_b
+        try:
+            result = self.matrix_a - self.matrix_b
+            return result
+        except ValueError:
+            return []
 
 matrix_service = MatrixService()

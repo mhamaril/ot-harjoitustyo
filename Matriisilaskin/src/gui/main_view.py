@@ -357,16 +357,22 @@ class MainView:
     def flip_matrices(self):
         """Flips matrix A to B and B to A
         """
-        temp_a = self.get_values_from_matrix_a()
-        temp_b = self.get_values_from_matrix_b()
+        temp_a = self.get_values_from_matrix_b()
+        temp_b = self.get_values_from_matrix_a()
         self.clear_a()
         for i in range(self.size):
             for j in range(self.size):
-                self.matrix_a[i][j].insert(0, float(temp_a[i][j]))
+                try:
+                    self.matrix_a[i][j].insert(0, float(temp_a[i][j]))
+                except IndexError:
+                    pass
         self.clear_b()
         for i in range(self.size):
             for j in range(self.size):
-                self.matrix_b[i][j].insert(0, float(temp_b[i][j]))
+                try:
+                    self.matrix_b[i][j].insert(0, float(temp_b[i][j]))
+                except IndexError:
+                    pass
 
     def insert_result_in_a(self):
         """Get values from result matrix and insert those in Matrix A
@@ -374,7 +380,10 @@ class MainView:
         self.clear_a()
         for i in range(self.size):
             for j in range(self.size):
-                self.matrix_a[i][j].insert(0, float(self.result_values[i][j]))
+                try:
+                    self.matrix_a[i][j].insert(0, float(self.result_values[i][j]))
+                except IndexError:
+                    pass
 
     def insert_result_in_b(self):
         """Get values from result matrix and insert those in Matrix B
@@ -382,7 +391,10 @@ class MainView:
         self.clear_b()
         for i in range(self.size):
             for j in range(self.size):
-                self.matrix_b[i][j].insert(0, float(self.result_values[i][j]))
+                try:
+                    self.matrix_b[i][j].insert(0, float(self.result_values[i][j]))
+                except IndexError:
+                    pass
 
     def get_values_from_matrix_a(self):
         """Get values from the Entries in Matrix A and returns
@@ -526,7 +538,7 @@ class MainView:
         else:
             self.size -= 1
             self.initialize_view(self.size, 2)
-    
+
     def logout_handler(self):
         user_service.logout()
         self.handle_logout()
